@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9715856674f36e247ae8a538b698a3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 8025333749549533609, guid: 677018c40c70f1442b5ea4f2f5220b98, type: 3}
+  stone: {fileID: 8025333749549533609, guid: 677018c40c70f1442b5ea4f2f5220b98, type: 3}
   rockPoint: {fileID: 491251560205921743}
   Force: 780
   force: 350

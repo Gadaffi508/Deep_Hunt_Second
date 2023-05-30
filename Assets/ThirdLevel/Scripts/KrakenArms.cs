@@ -30,7 +30,7 @@ public class KrakenArms : MonoBehaviour
             arms.transform.Rotate(180,0,0);
             arms.transform.DOMoveY(-2.5f, 1f).OnComplete(() =>
             {
-                arms.transform.DOMoveY(-2.5f, 2f).OnComplete(() =>
+                arms.transform.DOMoveY(-2.5f, 4f).OnComplete(() =>
                 {
 
                     arms.transform.DOMoveY(-10, 2f).OnComplete(() =>
@@ -40,7 +40,7 @@ public class KrakenArms : MonoBehaviour
                 }); 
             });
             
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(8f);
 
         }
         ArmSpawn();

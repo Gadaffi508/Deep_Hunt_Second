@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KrakenArmRock : MonoBehaviour
 {
-    public GameObject rock;
+    public GameObject stone;
     private Transform target;
     public Transform rockPoint;
     public float Force,force;
@@ -29,7 +29,7 @@ public class KrakenArmRock : MonoBehaviour
     }
     public void AttackOne()
     {
-        GameObject rockIns = Instantiate(rock, rockPoint.position, Quaternion.identity);
+        GameObject rockIns = Instantiate(stone, rockPoint.position, Quaternion.identity);
         rockIns.GetComponent<Rigidbody2D>().AddForce(transform.up * -Force);
         rockIns.GetComponent<Rigidbody2D>().AddForce(Vector2.left * -force);
         Destroy(rockIns, 3f);
@@ -37,9 +37,9 @@ public class KrakenArmRock : MonoBehaviour
 
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
         AttackOne();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine(timer());
     }
 }

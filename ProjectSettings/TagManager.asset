@@ -23,6 +23,7 @@ TagManager:
   - PanelTwo
   - krakenArm
   - rockPoint
+  - Stone
   layers:
   - Default
   - TransparentFX
