@@ -21,6 +21,8 @@ TagManager:
   - EnemyArrow
   - Water
   - PanelTwo
+  - krakenArm
+  - rockPoint
   layers:
   - Default
   - TransparentFX
