@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
   attackRange: 5
   Force: 0.03
   Speed: 75
