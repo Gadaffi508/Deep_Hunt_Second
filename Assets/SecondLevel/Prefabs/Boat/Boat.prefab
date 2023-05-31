@@ -149,6 +149,8 @@ MonoBehaviour:
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
   gold: 45
+  MoveDistance: 1.2
+  DistanceSpeed: 2
 --- !u!61 &6064737115687444782
 BoxCollider2D:
   m_ObjectHideFlags: 0

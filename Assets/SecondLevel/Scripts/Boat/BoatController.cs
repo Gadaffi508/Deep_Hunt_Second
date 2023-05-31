@@ -24,7 +24,18 @@ public class BoatController : MonoBehaviour
 
     [Space]
     [Header("Gold")]
-    public  int gold;
+    public int gold;
+
+    [Space]
+    [Header("Swing")]
+    public float MoveDistance = .1f; // Geminin toplam hareket edeceði mesafe
+    public float DistanceSpeed = 1f; // Geminin hareket hýzý
+
+    private Vector3 StartPos; // Geminin baþlangýç konumu
+
+    private bool stoped;
+
+    private bool Move = true;
 
 
     private void Awake()
@@ -38,7 +49,16 @@ public class BoatController : MonoBehaviour
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);
+        if (horizontal != 0)
+        {
+            rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);
+            StartPos = transform.position;
+            stoped = false;
+        }
+        else
+        {
+            stoped = true;
+        }
 
         if (horizontal > 0 && !isFacingRight)
         {
@@ -50,6 +70,15 @@ public class BoatController : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
+
+    private void Update()
+    {
+        if (stoped)
+        {
+            Swing();
+        }
+    }
+
     public void Regeneraiton()
     {
         if (Health < 100)
@@ -63,7 +92,7 @@ public class BoatController : MonoBehaviour
     }
     IEnumerator StartHealth()
     {
-       yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2);
         Regeneraiton();
         StartCoroutine(StartHealth());
     }
@@ -94,7 +123,7 @@ public class BoatController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -110,6 +139,23 @@ public class BoatController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -direction;
         transform.localScale = scale;
+    }
+    public void Swing()
+    {
+        float MovePosSpeed = DistanceSpeed * Time.deltaTime / 2;
+
+        if (Move)
+        {
+            transform.Translate(Vector3.right * MovePosSpeed);
+        }
+        else
+        {
+            transform.Translate(Vector3.left * MovePosSpeed);
+        }
+        if (StartPos.x + MoveDistance < transform.position.x || StartPos.x - MoveDistance > transform.position.x)
+        {
+            Move =! Move;
+        }
     }
 
 }
