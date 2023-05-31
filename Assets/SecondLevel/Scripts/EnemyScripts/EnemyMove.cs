@@ -16,10 +16,12 @@ public class EnemyMove : MonoBehaviour
 
     public float prevMoveSpeed;
     private EnemyHealtAndAttackScripts script;
+    private Animator animator;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         script = GetComponent<EnemyHealtAndAttackScripts>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -48,5 +50,19 @@ public class EnemyMove : MonoBehaviour
         rb.velocity = new Vector2(moveSpeed * Time.deltaTime,rb.velocity.y);
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            animator.SetBool("touched",true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            animator.SetBool("touched", false);
+        }
+    }
 }
