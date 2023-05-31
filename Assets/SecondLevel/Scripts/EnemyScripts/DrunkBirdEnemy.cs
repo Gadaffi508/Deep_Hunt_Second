@@ -18,11 +18,13 @@ public class DrunkBirdEnemy : MonoBehaviour
     private Vector2 tansformPosition;
     private float Distance;
     private EnemyHealtAndAttackScripts script;
+    private Animator animator;
     void Start()
     {
         Physics2D.queriesStartInColliders = false;
         rb = GetComponent<Rigidbody2D>();
         script = GetComponent<EnemyHealtAndAttackScripts>();
+        animator = GetComponent<Animator>();
     }
 
     
@@ -40,6 +42,7 @@ public class DrunkBirdEnemy : MonoBehaviour
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
             Invoke("Attack", 1f);
+            animator.SetTrigger("touched");
             MoveSpeed = 0f;
         }
         else if (hit.collider != null)
@@ -75,6 +78,7 @@ public class DrunkBirdEnemy : MonoBehaviour
 
     private void Attack()
     {
+        
         rb.velocity = new Vector2(rb.velocity.x,-Force * Time.deltaTime);
     }
   
