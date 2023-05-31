@@ -11,7 +11,7 @@ public class FlyEnemy : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private EnemyMove enemyMove;
-    [SerializeField] private Transform ship;
+ 
 
     [Header("Attribute")]
     [SerializeField] private float attackRange = 15f;
@@ -19,6 +19,7 @@ public class FlyEnemy : MonoBehaviour
 
     private Transform target;
     private float timeUntilFire;
+    private Transform ship;
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
@@ -26,8 +27,9 @@ public class FlyEnemy : MonoBehaviour
     }
     private void Start()
     {
-        enemyMove = GetComponent<EnemyMove>();
 
+        enemyMove = GetComponent<EnemyMove>();
+        ship = GameObject.FindGameObjectWithTag("Ship").transform;
         Physics2D.queriesStartInColliders = true;
     }
     void Update()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using DG.Tweening;
 
 public class WhirlpoolEnemy : MonoBehaviour
 {
@@ -26,35 +27,52 @@ public class WhirlpoolEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+      
 
-       
     }
     private void Update()
     {
         target = GameObject.FindGameObjectWithTag("Ship").transform;
+        if (transform.position.x > target.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1f);
+        }
     }
   
     void FixedUpdate()
     {
         if (transform.position.x > target.position.x)
         {
+            transform.localScale = new Vector3(1, 1, 1f);
             rb.velocity = new Vector2(-Speed * Time.deltaTime, rb.velocity.y);
         }
         else if (transform.position.x < target.position.x)
         {
+            transform.localScale = new Vector3(-1, 1, 1f);
             rb.velocity = new Vector2(Speed * Time.deltaTime, rb.velocity.y);
         }
         RaycastHit2D hits = Physics2D.CircleCast(transform.position, attackRange, (Vector2)transform.position, 0f, shipLayer);
 
         if (hits)
         {
-            Whirlpool();
-            Speed = 0;
+           
+            transform.DOMoveY(-6.5f, 1).OnComplete(() =>
+            {
+                Speed = 0;
+                Whirlpool();
+            });
         }
         else 
         {
-            
-            Speed = 75;
+            transform.DOMoveY(-4.5f, 1).OnComplete(() =>
+            {
+                Speed = 75;
+            });
+           
         }
     }
 
