@@ -32,18 +32,21 @@ public class FlyEnemy : MonoBehaviour
         enemyMove = GetComponent<EnemyMove>();
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
         Physics2D.queriesStartInColliders = true;
-    }
-    void Update()
-    {
-        ship = GameObject.FindGameObjectWithTag("Ship").transform;
         if (transform.position.x > ship.position.x)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            enemyMove.moveSpeed = -100;
         }
         else if (transform.position.x < ship.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            enemyMove.moveSpeed = 100f;
         }
+    }
+    void Update()
+    {
+        ship = GameObject.FindGameObjectWithTag("Ship").transform;
+       
 
         if (target == null)
         {
@@ -56,7 +59,16 @@ public class FlyEnemy : MonoBehaviour
             target = null;
             enemyMove.moveSpeed = enemyMove.prevMoveSpeed;
             animator.SetBool("touched", false);
-            enemyMove.moveSpeed = 100f;
+            if (transform.position.x > ship.position.x)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                enemyMove.moveSpeed = -100;
+            }
+            else if (transform.position.x < ship.position.x)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                enemyMove.moveSpeed = 100f;
+            }
         }
         else
         {

@@ -43,7 +43,7 @@ public class EnemyMove : MonoBehaviour
     private void Update()
     {
 
-        prevMoveSpeed = moveSpeed;
+       
     }
     // Update is called once per frame
     void FixedUpdate()
