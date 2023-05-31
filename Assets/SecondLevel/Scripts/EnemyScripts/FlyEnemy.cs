@@ -20,6 +20,7 @@ public class FlyEnemy : MonoBehaviour
     private Transform target;
     private float timeUntilFire;
     private Transform ship;
+    private Animator animator;
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
@@ -27,20 +28,21 @@ public class FlyEnemy : MonoBehaviour
     }
     private void Start()
     {
-
+        animator = GetComponent<Animator>();
         enemyMove = GetComponent<EnemyMove>();
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
         Physics2D.queriesStartInColliders = true;
     }
     void Update()
     {
+        ship = GameObject.FindGameObjectWithTag("Ship").transform;
         if (transform.position.x > ship.position.x)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (transform.position.x < ship.position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (target == null)
@@ -53,6 +55,8 @@ public class FlyEnemy : MonoBehaviour
         {
             target = null;
             enemyMove.moveSpeed = enemyMove.prevMoveSpeed;
+            animator.SetBool("touched", false);
+            enemyMove.moveSpeed = 100f;
         }
         else
         {
@@ -61,7 +65,7 @@ public class FlyEnemy : MonoBehaviour
 
             if (timeUntilFire >= 1f / bps)
             {
-                Shoot();
+                animator.SetBool("touched", true);
                 timeUntilFire = 0f;
             }
         }

@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3563619576150474129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   speed: 150
   direction: 1
   isFacingRight: 1
-  Health: 100
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}

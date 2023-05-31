@@ -19,6 +19,7 @@ public class WhirlpoolEnemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform target;
+    private Animator animator;
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
@@ -28,7 +29,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
       
-
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -68,6 +69,7 @@ public class WhirlpoolEnemy : MonoBehaviour
         }
         else 
         {
+            animator.SetBool("touched", false);
             transform.DOMoveY(-4.5f, 1).OnComplete(() =>
             {
                 Speed = 75;
@@ -82,10 +84,12 @@ public class WhirlpoolEnemy : MonoBehaviour
         if (transform.position.x > target.position.x)
         {
             target.transform.Translate(Force,0,0);
+            animator.SetBool("touched",true);
         }
         else if (transform.position.x < target.position.x)
         {
             target.transform.Translate(-Force, 0, 0);
+           
         }
     }
 

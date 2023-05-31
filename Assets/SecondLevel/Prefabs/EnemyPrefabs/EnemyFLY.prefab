@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8077027693354405017}
   - component: {fileID: 8077027693354405016}
   - component: {fileID: -7807228026670849070}
+  - component: {fileID: 2270498244660039687}
   m_Layer: 8
   m_Name: EnemyFLY
   m_TagString: Enemy
@@ -79,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 5a49bf62a8fb69e479fa7501243bfdef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a25f6c36f584ca4682ce1260b2cb22b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.68, y: 2.71}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -108,7 +109,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   enemyMove: {fileID: 8077027693354405018}
-  ship: {fileID: 3563619576150474143, guid: 2beda5b7fb0a1904aa8cbe7c52c91cc9, type: 3}
   attackRange: 10
   bps: 1
 --- !u!114 &8077027693354405018
@@ -144,8 +144,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.76, y: 2.31}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.68, y: 2.71}
+    newSize: {x: 2.68, y: 2.71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -187,7 +187,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHealth: 24
-  EnemyAttack: 12
+  DamageTaken: 15
+  EnemyTakeDamage: 15
+--- !u!95 &2270498244660039687
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077027693354405023}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7cfb124bc2bfd8c48bfddc527f5b6906, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8077027694083149191
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8077027694083149191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76, y: 0, z: 0}
+  m_LocalPosition: {x: -0.58, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,14 +6,22 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 {
     [Header("Attribute")]
     [SerializeField] public float EnemyHealth = 100;
-    [SerializeField] public float EnemyAttack = 15;
+    [SerializeField] public float DamageTaken = 15;
+    [SerializeField] public int EnemyTakeDamage = 15;
 
     private float currentHealth;
+
+    private GameManager gameManager;
     void Start()
     {
         currentHealth = EnemyHealth;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
+    public void TakeDamage(int damage)
+    {
+        gameManager.Health -= damage;
 
+    }
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -25,5 +33,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
         }
     }
- 
+
+    
+
 }

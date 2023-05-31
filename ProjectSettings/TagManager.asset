@@ -24,6 +24,7 @@ TagManager:
   - krakenArm
   - rockPoint
   - Stone
+  - GameManager
   layers:
   - Default
   - TransparentFX
