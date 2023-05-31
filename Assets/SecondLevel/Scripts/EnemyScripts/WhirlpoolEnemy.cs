@@ -7,9 +7,8 @@ using UnityEngine;
 public class WhirlpoolEnemy : MonoBehaviour
 {
     [Header("Referances")]
-    [SerializeField] private Transform target;
     [SerializeField] private LayerMask shipLayer;
-    [SerializeField] private GameObject Ship;
+    
 
 
     [Header("Attribute")]
@@ -18,6 +17,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     [SerializeField] private float Speed;
 
     private Rigidbody2D rb;
+    private Transform target;
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
@@ -26,9 +26,14 @@ public class WhirlpoolEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    // Update is called once per frame
+       
+    }
+    private void Update()
+    {
+        target = GameObject.FindGameObjectWithTag("Ship").transform;
+    }
+  
     void FixedUpdate()
     {
         if (transform.position.x > target.position.x)
@@ -49,7 +54,7 @@ public class WhirlpoolEnemy : MonoBehaviour
         else 
         {
             
-            Speed = 250;
+            Speed = 75;
         }
     }
 
@@ -58,11 +63,11 @@ public class WhirlpoolEnemy : MonoBehaviour
     {
         if (transform.position.x > target.position.x)
         {
-            Ship.transform.Translate(Force,0,0);
+            target.transform.Translate(Force,0,0);
         }
         else if (transform.position.x < target.position.x)
         {
-            Ship.transform.Translate(-Force, 0, 0);
+            target.transform.Translate(-Force, 0, 0);
         }
     }
 

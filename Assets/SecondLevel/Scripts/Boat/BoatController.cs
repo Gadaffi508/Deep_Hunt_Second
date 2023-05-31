@@ -73,10 +73,10 @@ public class BoatController : MonoBehaviour
 
     private void Update()
     {
-        if (stoped)
-        {
-            Swing();
-        }
+        //if (stoped)
+        //{
+        //    Swing();
+        //}
     }
 
     public void Regeneraiton()
@@ -146,11 +146,11 @@ public class BoatController : MonoBehaviour
 
         if (Move)
         {
-            transform.Translate(Vector3.right * MovePosSpeed);
+            transform.Translate(Vector2.right * MovePosSpeed);
         }
         else
         {
-            transform.Translate(Vector3.left * MovePosSpeed);
+            transform.Translate(Vector2.left * MovePosSpeed);
         }
         if (StartPos.x + MoveDistance < transform.position.x || StartPos.x - MoveDistance > transform.position.x)
         {
