@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 2bfe53af89d5fc14685e3e11acf382d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96d34f193dbcea049a3d8ef47e0cb4d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +101,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.46313798, y: -2.4292047}
-  m_Size: {x: 6.048438, y: 1.3666784}
+  m_Offset: {x: 0.82177764, y: -2.429205}
+  m_Size: {x: 6.2240553, y: 1.3666784}
   m_Direction: 1
 --- !u!50 &1608807082651561913
 Rigidbody2D:
@@ -145,7 +145,7 @@ MonoBehaviour:
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
-  gold: 5
+  gold: 100
   MoveDistance: 0.1
   DistanceSpeed: 1
 --- !u!1001 &244865070098350225
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5405113573087445419, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.21
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 5405113573087445419, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_LocalPosition.y

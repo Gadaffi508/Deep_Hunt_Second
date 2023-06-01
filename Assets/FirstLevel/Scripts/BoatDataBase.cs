@@ -14,9 +14,4 @@ public class BoatDataBase : ScriptableObject
             return boat.Length;
         }
     }
-
-    public BoatChoose GetBoat(int index)
-    {
-        return boat[index];
-    }
 }

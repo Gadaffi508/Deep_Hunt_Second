@@ -8,31 +8,22 @@ public class BoatGame : MonoBehaviour
 
     public GameObject artworkObject;
 
-    private int selectOption = 0;
+    public int direction;
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("selectOption"))
-        {
-            selectOption = 0;
-        }
-        else
-        {
-            Load();
-        }
-
-        UpdateBoat(selectOption);
-        Instantiate(artworkObject,transform.position,Quaternion.identity);
+        UpdateBoat(boatdbs);
+        Debug.Log(Load("direction"));
+        Instantiate(artworkObject, transform.position, Quaternion.identity);
     }
 
-    private void UpdateBoat(int selectedOption)
+    private void UpdateBoat(BoatDataBase boatChoose)
     {
-        BoatChoose boatChoose = boatdbs.GetBoat(selectedOption);
-        artworkObject = boatChoose.boat;
+        direction = Load("direction");
+        artworkObject = boatChoose.boat[direction].boat;
     }
-
-    private void Load()
+    public int Load(string KeyName)
     {
-        selectOption = PlayerPrefs.GetInt("selectOption");
+        return PlayerPrefs.GetInt(KeyName);
     }
 }

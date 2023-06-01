@@ -2481,6 +2481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boatdbs: {fileID: 11400000, guid: 407e28a67c854c945a5d8cd4c9a5b5b9, type: 2}
   artworkObject: {fileID: 1608807082651561915, guid: 5494c42585c79ed4899dbb0b667346ca, type: 3}
+  direction: 0
 --- !u!1 &1336206300
 GameObject:
   m_ObjectHideFlags: 0
