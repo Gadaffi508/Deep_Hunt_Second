@@ -28,7 +28,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         animator.SetBool("touched", false);
-        Physics2D.queriesStartInColliders = true;
+       
         prevMoveSpeed = moveSpeed;
         if (transform.position.x > target.position.x)
         {

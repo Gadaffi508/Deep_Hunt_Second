@@ -6,6 +6,7 @@ public class DrunkBirdEnemy : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject hitObject;
 
     [Header("Attribute")]
     [SerializeField] private float AttackDistance = 15f;
@@ -21,7 +22,7 @@ public class DrunkBirdEnemy : MonoBehaviour
     private Transform target;
     void Start()
     {
-        Physics2D.queriesStartInColliders = false;
+        
         rb = GetComponent<Rigidbody2D>();
         script = GetComponent<EnemyHealtAndAttackScripts>();
         animator = GetComponent<Animator>();
@@ -30,10 +31,10 @@ public class DrunkBirdEnemy : MonoBehaviour
     
     void Update()
     {
-        Physics2D.queriesStartInColliders = false;
+        
         target = GameObject.FindGameObjectWithTag("Ship").transform;
         Move();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down,AttackDistance);
+        RaycastHit2D hit = Physics2D.Raycast(hitObject.transform.position,Vector2.down,AttackDistance);
 
         if (hit.collider == null)
         {
