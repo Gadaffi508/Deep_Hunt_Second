@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1936034bfb042c48a9f9c2dec76e3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8268947992135232424, guid: 519a9778a74cc0c4f8e8cbb2726bd712, type: 3}
+  bulletPrefab: {fileID: 1147373212084526732, guid: b35d55946e6f18946ad2cf2afcda9b80, type: 3}
   firingPoint: {fileID: 8077027694083149184}
   enemyMask:
     serializedVersion: 2

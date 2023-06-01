@@ -25,6 +25,7 @@ TagManager:
   - rockPoint
   - Stone
   - GameManager
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

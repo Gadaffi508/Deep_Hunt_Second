@@ -86,7 +86,7 @@ public class FlyEnemy : MonoBehaviour
     private void Shoot()
     {
         GameObject row = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        ArrowScripts arrowScripts = row.GetComponent<ArrowScripts>();
+        FlyEnemyBullet arrowScripts = row.GetComponent<FlyEnemyBullet>();
         arrowScripts.SetTarget(target);
 
     }
