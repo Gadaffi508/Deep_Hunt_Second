@@ -61,7 +61,7 @@ public class WhirlpoolEnemy : MonoBehaviour
         if (hits)
         {
            
-            transform.DOMoveY(-6.5f, 1).OnComplete(() =>
+            transform.DOMoveY(-7.5f, 1).OnComplete(() =>
             {
                 Speed = 0;
                 Whirlpool();
