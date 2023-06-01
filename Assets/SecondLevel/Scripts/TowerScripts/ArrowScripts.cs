@@ -18,7 +18,7 @@ public class ArrowScripts : MonoBehaviour
     private void Start()
     {
         script = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealtAndAttackScripts>();
-
+        Damage = 15;
         Destroy(gameObject, 1.5f);
     }
 
@@ -44,7 +44,7 @@ public class ArrowScripts : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            script.TakeDamage(script.DamageTaken);
+            collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().DamageTaken(Damage);
             Destroy(gameObject);
         }
     }
@@ -52,7 +52,7 @@ public class ArrowScripts : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            script.TakeDamage(script.DamageTaken);
+            collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().DamageTaken(Damage);
             Destroy(gameObject);
         }
     }

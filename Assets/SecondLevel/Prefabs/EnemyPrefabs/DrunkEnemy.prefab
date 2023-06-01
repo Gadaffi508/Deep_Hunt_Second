@@ -171,9 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c327dd80d724ae41bb8ab5ad2295f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 72
-  DamageTaken: 15
-  EnemyTakeDamage: 15
+  health: 60
+  attack: 40
 --- !u!95 &2945301980349128059
 Animator:
   serializedVersion: 4

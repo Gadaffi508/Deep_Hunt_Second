@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4920332025692544161}
   rowSpeed: 25
-  Damage: 0
+  Damage: 15
   Name: White Arrow
 --- !u!58 &1346595840320292313
 CircleCollider2D:
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &-5406419669466288976
 SpriteRenderer:
   m_ObjectHideFlags: 0
