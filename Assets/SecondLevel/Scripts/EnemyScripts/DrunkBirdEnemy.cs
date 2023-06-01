@@ -5,7 +5,6 @@ using UnityEngine;
 public class DrunkBirdEnemy : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform target;
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Attribute")]
@@ -19,6 +18,7 @@ public class DrunkBirdEnemy : MonoBehaviour
     private float Distance;
     private EnemyHealtAndAttackScripts script;
     private Animator animator;
+    private Transform target;
     void Start()
     {
         Physics2D.queriesStartInColliders = false;
@@ -30,7 +30,8 @@ public class DrunkBirdEnemy : MonoBehaviour
     
     void Update()
     {
-
+        Physics2D.queriesStartInColliders = false;
+        target = GameObject.FindGameObjectWithTag("Ship").transform;
         Move();
         RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down,AttackDistance);
 

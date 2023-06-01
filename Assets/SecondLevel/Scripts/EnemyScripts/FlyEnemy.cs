@@ -46,8 +46,8 @@ public class FlyEnemy : MonoBehaviour
     void Update()
     {
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
-       
 
+        Physics2D.queriesStartInColliders = true;
         if (target == null)
         {
             FindTarget();

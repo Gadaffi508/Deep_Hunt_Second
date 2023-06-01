@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
@@ -42,8 +43,8 @@ public class EnemyMove : MonoBehaviour
     }
     private void Update()
     {
+        Physics2D.queriesStartInColliders = true;
 
-       
     }
     // Update is called once per frame
     void FixedUpdate()
