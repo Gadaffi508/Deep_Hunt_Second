@@ -144,6 +144,7 @@ MonoBehaviour:
   speed: 150
   direction: 1
   isFacingRight: 1
+  Health: 250
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}

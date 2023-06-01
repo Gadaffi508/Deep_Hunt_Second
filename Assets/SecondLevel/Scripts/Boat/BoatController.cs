@@ -44,6 +44,7 @@ public class BoatController : MonoBehaviour
 
         GameManager.Instance.Health = Health;
         GameManager.Instance.Gold = gold;
+        Health = 250;
     }
 
     void FixedUpdate()

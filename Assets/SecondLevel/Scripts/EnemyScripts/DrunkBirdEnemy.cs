@@ -83,6 +83,13 @@ public class DrunkBirdEnemy : MonoBehaviour
         
         rb.velocity = new Vector2(rb.velocity.x,-Force * Time.deltaTime);
     }
-  
-  
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            script.TakeDamage(35);
+            Destroy(gameObject);
+        }
+    }
 }
