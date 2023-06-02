@@ -12,11 +12,20 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     private int curentHealth;
 
+    private Animator animator;
+    public GameObject puffEffect;
+    public Transform effectPoint1;
     private GameManager gameManager;
+    SpriteRenderer render;
+    private EnemyMove move;
     void Start()
     {
+        move = GetComponent<EnemyMove>();
+        render = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         curentHealth = health;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        render.enabled = true;
     }
     public void TakeDamage(int damage)
     {
@@ -32,11 +41,21 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         if (curentHealth <= 0)
         {
             gameManager.Gold += 15;
-            Destroy(gameObject);
+            StartCoroutine(Timer());
+          
+           
             Debug.Log("Öldüm");
         }
     }
-
-    
+   
+    IEnumerator Timer()
+    {
+        animator.SetBool("Dead", true);
+        move.moveSpeed = 0;
+        yield return new WaitForSeconds(0.5f);
+        render.enabled = false;
+        Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 
 }
