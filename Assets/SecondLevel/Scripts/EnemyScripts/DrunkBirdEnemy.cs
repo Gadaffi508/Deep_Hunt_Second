@@ -7,6 +7,8 @@ public class DrunkBirdEnemy : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject hitObject;
+    [SerializeField] private GameObject effect;
+    [SerializeField] private Transform effectpoint;
 
     [Header("Attribute")]
     [SerializeField] private float AttackDistance = 15f;
@@ -56,7 +58,19 @@ public class DrunkBirdEnemy : MonoBehaviour
     //public float speed = 0.2f;
     //public float amplitude = 0.5f;
     //public float frequency = 0.1f;
-    
+    private void Update()
+    {
+        if (transform.position.x > target.position.x)
+        {
+          
+            transform.localScale = new Vector3(1, 1, 1f);
+        }
+        else
+        {
+           
+            transform.localScale = new Vector3(-1, 1, 1f);
+        }
+    }
     private void Move()
     {
 
@@ -92,5 +106,10 @@ public class DrunkBirdEnemy : MonoBehaviour
             script.TakeDamage(35);
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Instantiate(effect, effectpoint.position, Quaternion.identity);
+        }
     }
+   
 }

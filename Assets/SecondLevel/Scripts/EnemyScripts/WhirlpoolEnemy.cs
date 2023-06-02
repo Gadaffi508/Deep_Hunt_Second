@@ -10,7 +10,9 @@ public class WhirlpoolEnemy : MonoBehaviour
     [Header("Referances")]
     [SerializeField] private LayerMask shipLayer;
     [SerializeField] private GameObject effect;
+    [SerializeField] private GameObject effect1;
     [SerializeField] private Transform pointEffect;
+    [SerializeField] private Transform pointEffect1;
 
     [Header("Attribute")]
     [SerializeField] private float attackRange = 15f;
@@ -46,14 +48,15 @@ public class WhirlpoolEnemy : MonoBehaviour
   
     void FixedUpdate()
     {
+        target = GameObject.FindGameObjectWithTag("Ship").transform;
         if (transform.position.x > target.position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1f);
+            transform.localScale = new Vector3(-1, 1, 1f);
             rb.velocity = new Vector2(-Speed * Time.deltaTime, rb.velocity.y);
         }
         else if (transform.position.x < target.position.x)
         {
-            transform.localScale = new Vector3(-1, 1, 1f);
+            transform.localScale = new Vector3(1, 1, 1f);
             rb.velocity = new Vector2(Speed * Time.deltaTime, rb.velocity.y);
         }
         RaycastHit2D hits = Physics2D.CircleCast(transform.position, attackRange, (Vector2)transform.position, 0f, shipLayer);
@@ -93,6 +96,13 @@ public class WhirlpoolEnemy : MonoBehaviour
            
         }
     }
+   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Instantiate(effect1, pointEffect1.position, Quaternion.identity);
+        }
+    }
 
-  
 }

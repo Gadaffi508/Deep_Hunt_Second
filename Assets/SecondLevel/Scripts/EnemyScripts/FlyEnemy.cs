@@ -30,8 +30,13 @@ public class FlyEnemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         enemyMove = GetComponent<EnemyMove>();
-        ship = GameObject.FindGameObjectWithTag("Ship").transform;
         
+        
+        
+    }
+    void Update()
+    {
+        ship = GameObject.FindGameObjectWithTag("Ship").transform;
         if (transform.position.x > ship.position.x)
         {
             transform.localScale = new Vector3(1, 1, 1);
@@ -42,11 +47,6 @@ public class FlyEnemy : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
             enemyMove.moveSpeed = 100f;
         }
-    }
-    void Update()
-    {
-        ship = GameObject.FindGameObjectWithTag("Ship").transform;
-
         Physics2D.queriesStartInColliders = true;
         if (target == null)
         {
