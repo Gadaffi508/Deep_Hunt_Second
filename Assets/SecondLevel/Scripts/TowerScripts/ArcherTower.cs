@@ -10,11 +10,11 @@ public class ArcherTower : MonoBehaviour
     public Transform rotateFire;
 
     public BulletScriptable Bullet;
-    public Transform FirePos;
+    public Transform FirePos,effectPos;
     public Transform BulletRotate;
 
     public float nextPrefab;
-
+    public GameObject bombEffect;
     BoatController boat;
 
     private void Start()
@@ -43,10 +43,11 @@ public class ArcherTower : MonoBehaviour
         {
             Transform enemy = nearestEnemy.GetComponent<Transform>();
 
-            if (nextPrefab >= 0.40f)
+            if (nextPrefab >= 1.5f)
             {
                 ProjectTileFire(enemy);
                 nextPrefab = 0;
+                Instantiate(bombEffect, effectPos.position, Quaternion.identity);
 
             }
 

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135743263616261993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.350297, y: 0.025547504, z: -0.04392557}
+  m_LocalPosition: {x: -1.09, y: 0.71, z: -0.04392557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,6 +137,8 @@ MonoBehaviour:
   target: {fileID: 3563619576150474143, guid: 2beda5b7fb0a1904aa8cbe7c52c91cc9, type: 3}
   moveSpeed: 65
   prevMoveSpeed: 0
+  Effect: {fileID: 1040608886635896, guid: a97415c6b57076f41a6621a7b51d63a3, type: 3}
+  effectPoint: {fileID: 5247659330181984041}
 --- !u!61 &4061449317861404778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,5 +218,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c327dd80d724ae41bb8ab5ad2295f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 45
+  health: 10000
   attack: 8

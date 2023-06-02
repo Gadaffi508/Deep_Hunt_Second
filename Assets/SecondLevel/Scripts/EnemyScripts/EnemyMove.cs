@@ -16,6 +16,8 @@ public class EnemyMove : MonoBehaviour
 
 
     public float prevMoveSpeed;
+    public GameObject Effect;
+    public Transform effectPoint;
     private EnemyHealtAndAttackScripts script;
     private Animator animator;
     private void Awake()
@@ -58,6 +60,10 @@ public class EnemyMove : MonoBehaviour
         {
             animator.SetBool("touched",true);
         }
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Instantiate(Effect, effectPoint.position, Quaternion.identity);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -65,6 +71,14 @@ public class EnemyMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ship"))
         {
             animator.SetBool("touched", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Instantiate(Effect, effectPoint.position, Quaternion.identity);
         }
     }
 }

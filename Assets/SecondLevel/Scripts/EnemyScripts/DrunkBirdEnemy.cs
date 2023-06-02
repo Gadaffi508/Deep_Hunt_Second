@@ -29,7 +29,7 @@ public class DrunkBirdEnemy : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         
         target = GameObject.FindGameObjectWithTag("Ship").transform;
@@ -43,7 +43,8 @@ public class DrunkBirdEnemy : MonoBehaviour
         else if (hit.collider.CompareTag("Ship"))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
-            Invoke("Attack", 1f);
+            Invoke("Attack", 0.3f);
+            animator.SetBool("okey",true);
             animator.SetTrigger("touched");
             MoveSpeed = 0f;
         }

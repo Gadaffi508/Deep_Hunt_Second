@@ -9,8 +9,8 @@ public class WhirlpoolEnemy : MonoBehaviour
 {
     [Header("Referances")]
     [SerializeField] private LayerMask shipLayer;
-    
-
+    [SerializeField] private GameObject effect;
+    [SerializeField] private Transform pointEffect;
 
     [Header("Attribute")]
     [SerializeField] private float attackRange = 15f;
@@ -81,6 +81,7 @@ public class WhirlpoolEnemy : MonoBehaviour
 
     private void Whirlpool()
     {
+        Instantiate(effect,pointEffect.position,Quaternion.identity);
         if (transform.position.x > target.position.x)
         {
             target.transform.Translate(Force,0,0);

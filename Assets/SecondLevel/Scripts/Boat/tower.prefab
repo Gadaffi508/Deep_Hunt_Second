@@ -131,8 +131,10 @@ MonoBehaviour:
   rotateFire: {fileID: 621758480841080324}
   Bullet: {fileID: 11400000, guid: 6b060e85be096a646b87a45d30c06779, type: 2}
   FirePos: {fileID: 21210941616526318}
+  effectPos: {fileID: 7959354336718767629}
   BulletRotate: {fileID: 1697499072240528607}
   nextPrefab: 0
+  bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
 --- !u!1 &5084475658254553820
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +409,38 @@ Transform:
   - {fileID: 21210941616526318}
   - {fileID: 334545383324115090}
   - {fileID: 1697499072240528607}
+  - {fileID: 7959354336718767629}
   m_Father: {fileID: 21210942353340200}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8004737669292065624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7959354336718767629}
+  m_Layer: 7
+  m_Name: Firepos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7959354336718767629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004737669292065624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.72, y: 0.183, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621758480841080324}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
