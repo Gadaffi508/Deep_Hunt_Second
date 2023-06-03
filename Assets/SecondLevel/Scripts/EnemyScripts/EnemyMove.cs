@@ -46,7 +46,7 @@ public class EnemyMove : MonoBehaviour
     private void Update()
     {
         Physics2D.queriesStartInColliders = true;
- 
+        animator.SetBool("touched", false);
     }
     // Update is called once per frame
     void FixedUpdate()
