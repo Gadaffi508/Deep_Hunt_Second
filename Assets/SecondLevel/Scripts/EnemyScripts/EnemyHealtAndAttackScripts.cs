@@ -45,8 +45,8 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     IEnumerator Timer()
     {
-        animator.SetBool("Dead", true);
-        move.moveSpeed = 0;
+        //animator.SetBool("Dead", true);
+        //move.moveSpeed = 0;
         yield return new WaitForSeconds(0.5f);
         render.enabled = false;
         Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
