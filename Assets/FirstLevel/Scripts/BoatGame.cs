@@ -14,7 +14,7 @@ public class BoatGame : MonoBehaviour
     {
         UpdateBoat(boatdbs);
         Debug.Log(Load("direction"));
-        Instantiate(artworkObject, transform.position, Quaternion.identity);
+        Instantiate(artworkObject, artworkObject.transform.position, Quaternion.identity);
     }
 
     private void UpdateBoat(BoatDataBase boatChoose)

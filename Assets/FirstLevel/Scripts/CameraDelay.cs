@@ -28,10 +28,10 @@ public class CameraDelay : MonoBehaviour
         }
         targetAll[level].SetActive(true);
 
-        if(level > 0)
+        if(level > 1)
             targetPos = targetAll[level-1].transform;
         else
-            targetPos = targetAll[0].transform;
+            targetPos = targetAll[1].transform;
 
 
         yield return new WaitForSeconds(1);
@@ -52,6 +52,6 @@ public class CameraDelay : MonoBehaviour
     }
     public void FogOut()
     {
-        Fog.transform.DOMoveY(-12,2);
+        Fog.transform.DOMoveY(-5,2);
     }
 }

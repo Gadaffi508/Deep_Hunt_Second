@@ -42,6 +42,7 @@ public class ArcherTower : MonoBehaviour
         if (nearestEnemy != null)
         {
             Transform enemy = nearestEnemy.GetComponent<Transform>();
+            Facing(enemy);
 
             if (nextPrefab >= 1.5f)
             {
@@ -50,10 +51,6 @@ public class ArcherTower : MonoBehaviour
                 Instantiate(bombEffect, effectPos.position, Quaternion.identity);
 
             }
-
-            Facing(enemy);
-            
-
         }
 
     }
