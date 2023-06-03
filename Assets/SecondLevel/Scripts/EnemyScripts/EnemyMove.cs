@@ -46,7 +46,7 @@ public class EnemyMove : MonoBehaviour
     private void Update()
     {
         Physics2D.queriesStartInColliders = true;
-
+ 
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -56,13 +56,17 @@ public class EnemyMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ship"))
-        {
-            animator.SetBool("touched",true);
-        }
+       
         if (collision.gameObject.CompareTag("Arrow"))
         {
             Instantiate(Effect, effectPoint.position, Quaternion.identity);
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            animator.SetBool("touched", true);
         }
     }
 

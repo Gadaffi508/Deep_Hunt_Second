@@ -42,6 +42,12 @@ public class FlyEnemyBullet : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag("kuleA"))
+        {
+            GameManager.Instance.TakeDamage(attack);
+            Destroy(gameObject);    
+
+        }
     }
 
    
