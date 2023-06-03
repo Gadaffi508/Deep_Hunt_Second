@@ -26,7 +26,10 @@ public class EnemyMove : MonoBehaviour
         script = GetComponent<EnemyHealtAndAttackScripts>();
         animator = GetComponent<Animator>();
     }
-
+    public void Animation()
+    {
+        animator.SetBool("damage", false);
+    }
     void Start()
     {
         animator.SetBool("touched", false);
@@ -46,9 +49,9 @@ public class EnemyMove : MonoBehaviour
     private void Update()
     {
         Physics2D.queriesStartInColliders = true;
-        animator.SetBool("touched", false);
+        
+
     }
-    // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveSpeed * Time.deltaTime,rb.velocity.y);
@@ -59,8 +62,11 @@ public class EnemyMove : MonoBehaviour
        
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            animator.SetBool("damage", true);
             Instantiate(Effect, effectPoint.position, Quaternion.identity);
+           
         }
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -68,6 +74,7 @@ public class EnemyMove : MonoBehaviour
         {
             animator.SetBool("touched", true);
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -76,13 +83,18 @@ public class EnemyMove : MonoBehaviour
         {
             animator.SetBool("touched", false);
         }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            animator.SetBool("damage", true);
             Instantiate(Effect, effectPoint.position, Quaternion.identity);
         }
+       
     }
+
+    
 }
