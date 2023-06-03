@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BoatController : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class BoatController : MonoBehaviour
 
         GameManager.Instance.Health = Health;
         GameManager.Instance.Gold = gold;
-        Health = 250;
+        Health = 100;
     }
 
     void FixedUpdate()
@@ -69,33 +70,6 @@ public class BoatController : MonoBehaviour
         {
             Flip();
         }
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-    }
-
-    private void Update()
-    {
-        //if (stoped)
-        //{
-        //    Swing();
-        //}
-    }
-
-    public void Regeneraiton()
-    {
-        if (Health < 100)
-        {
-            Health += 5;
-        }
-        else
-        {
-            Health = 100;
-        }
-    }
-    IEnumerator StartHealth()
-    {
-        yield return new WaitForSeconds(2);
-        Regeneraiton();
-        StartCoroutine(StartHealth());
     }
     IEnumerator DamageSlowTýme()
     {

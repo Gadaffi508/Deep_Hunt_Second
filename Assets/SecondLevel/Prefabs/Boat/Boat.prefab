@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6064737115687444782}
   - component: {fileID: 4016865982890852513}
   - component: {fileID: 5678026459049728147}
+  - component: {fileID: 5593027601875991307}
   m_Layer: 9
   m_Name: Boat
   m_TagString: Ship
@@ -145,7 +146,7 @@ MonoBehaviour:
   speed: 150
   direction: 1
   isFacingRight: 1
-  Health: 250
+  Health: 100
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
@@ -230,6 +231,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78301096, y: 3.721398}
   m_EdgeRadius: 0
+--- !u!95 &5593027601875991307
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563619576150474138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4298a123d9f41044c93b120639d1d1f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4778243162202765983
 PrefabInstance:
   m_ObjectHideFlags: 0

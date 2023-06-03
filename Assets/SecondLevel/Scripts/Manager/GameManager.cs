@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     public Text HealthText;
 
     public int Gold;
-    public int Health;
+    public float Health;
+
+    public Image Healtbar;
+    public GameObject HealtbarBG;
 
     public static GameManager Instance;
 
@@ -19,11 +22,33 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    IEnumerator Start()
+    {
+        yield return new WaitForSeconds(1);
+        HealtbarBG.SetActive(true);
+        Healtbar.gameObject.SetActive(true);
+    }
+
     private void FixedUpdate()
     {
-        HealthText.text = "Health : " + Health.ToString();
         Goldtext.text = "Gold : " + Gold.ToString();
     }
 
-   
+
+    public void Heal(float healingAmount)
+    {
+        Health += healingAmount;
+        Health = Mathf.Clamp(healingAmount, 0, 100);
+
+        Healtbar.fillAmount = healingAmount / 100;
+    }
+
+
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        Healtbar.fillAmount = Health / 100;
+    }
+
+
 }

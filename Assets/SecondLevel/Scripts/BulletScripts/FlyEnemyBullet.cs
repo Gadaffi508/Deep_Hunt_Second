@@ -8,6 +8,7 @@ public class FlyEnemyBullet : MonoBehaviour
     private float rowSpeed = 6f;
     private EnemyHealtAndAttackScripts scripts;
     public int damage;
+    public float attack;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class FlyEnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            scripts.TakeDamage(damage);
+            GameManager.Instance.TakeDamage(attack);
             Destroy(gameObject);
 
         }

@@ -8,14 +8,11 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
     [Header("Healt")]
     [SerializeField] private int health;
     [Header("Attack")]
-    [SerializeField] private int attack;
-
-    private int curentHealth;
+    [SerializeField] public int attack;
 
     private Animator animator;
     public GameObject puffEffect;
     public Transform effectPoint1;
-    private GameManager gameManager;
     SpriteRenderer render;
     private EnemyMove move;
     void Start()
@@ -23,31 +20,29 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         move = GetComponent<EnemyMove>();
         render = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        curentHealth = health;
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         render.enabled = true;
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        gameManager.Health -= damage;
+        GameManager.Instance.TakeDamage(attack);
 
     }
-   
+
 
     public void DamageTaken(int damage)
     {
-        curentHealth -= damage;
+        health -= damage;
 
-        if (curentHealth <= 0)
+        if (health <= 0)
         {
-            gameManager.Gold += 15;
+            GameManager.Instance.Gold += 15;
             StartCoroutine(Timer());
-          
-           
+
+
             Debug.Log("Öldüm");
         }
     }
-   
+
     IEnumerator Timer()
     {
         //animator.SetBool("Dead", true);

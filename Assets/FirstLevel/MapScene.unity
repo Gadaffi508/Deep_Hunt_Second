@@ -397,7 +397,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: a662d2512a8f0774998acf06af90e2da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcabb72ebafff2046ad1f3bf82a25d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -416,7 +416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58350209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.38, z: 10}
+  m_LocalPosition: {x: 0, y: 6.96, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1120,7 +1120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456994187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.19, y: -2.57, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2088,7 +2088,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 17.391956, y: 22.964918}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -2104,7 +2104,7 @@ Transform:
   m_GameObject: {fileID: 1122765627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.125, y: 1.2886484, z: 1}
+  m_LocalScale: {x: 3.110935, y: 2.697694, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2120,7 +2120,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1188519703}
   - component: {fileID: 1188519702}
-  - component: {fileID: 1188519705}
   - component: {fileID: 1188519706}
   m_Layer: 11
   m_Name: Icons_0004_Black--White-1
@@ -2196,25 +2195,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188519705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188519701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68765e35ae446894fa96a418dbdeb554, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OpenTowerObject:
-    serializedVersion: 2
-    m_Bits: 2048
-  Camera: {fileID: 456994189}
-  levelL: 0
-  "Yaz\u0131": 1
-  sceneID: 3
 --- !u!61 &1188519706
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraMain : MonoBehaviour
 {
@@ -14,8 +15,12 @@ public class CameraMain : MonoBehaviour
     private float titremeSiddeti = 0.5f;
     private float titremeSure = 0.3f;
 
+    public GameObject Fog;
+
     private IEnumerator Start()
     {
+        yield return new WaitForSeconds(.5f);
+        Fog.transform.DOMoveY(20,1);
         yield return new WaitForSeconds(1);
         targetPos = GameObject.FindGameObjectWithTag("Ship").transform;
         // Karakter ile kamera arasýndaki baþlangýç mesafesini belirlemek için kullanýlýr.
@@ -29,7 +34,7 @@ public class CameraMain : MonoBehaviour
 
         Vector3 yumusatilmisPozisyon = Vector3.Lerp(transform.position, targetVector, speed * Time.deltaTime);
 
-        transform.position = yumusatilmisPozisyon;
+        transform.position = new Vector3(yumusatilmisPozisyon.x,transform.position.y,transform.position.z);
 
     }
 

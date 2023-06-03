@@ -11,7 +11,6 @@ public class CameraDelay : MonoBehaviour
     public float speed = 2.0f;
     public Vector3 delayAmount;
     private Vector3 targetVector;
-
     public static CameraDelay instance;
     public GameObject Fog;
 
@@ -49,9 +48,10 @@ public class CameraDelay : MonoBehaviour
 
         transform.position = yumusatilmisPozisyon;
 
+        Mathf.Clamp(transform.position.y, -9.66f, 9.77f);
     }
     public void FogOut()
     {
-        Fog.transform.DOMoveY(-5,2);
+        Fog.transform.DOMoveY(-5, 2);
     }
 }

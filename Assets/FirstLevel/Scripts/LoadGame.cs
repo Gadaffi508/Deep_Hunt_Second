@@ -56,7 +56,7 @@ public class LoadGame : MonoBehaviour
     IEnumerator loadGame()
     {
         Camera.GetComponent<CameraDelay>().FogOut();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(sceneID);
     }
 }

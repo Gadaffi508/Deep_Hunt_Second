@@ -22,6 +22,8 @@ public class DrunkBirdEnemy : MonoBehaviour
     private EnemyHealtAndAttackScripts script;
     private Animator animator;
     private Transform target;
+
+    public float attack;
     void Start()
     {
         
@@ -60,15 +62,18 @@ public class DrunkBirdEnemy : MonoBehaviour
     //public float frequency = 0.1f;
     private void Update()
     {
-        if (transform.position.x > target.position.x)
+        if (target != null)
         {
-          
-            transform.localScale = new Vector3(1, 1, 1f);
-        }
-        else
-        {
-           
-            transform.localScale = new Vector3(-1, 1, 1f);
+            if (transform.position.x > target.position.x)
+            {
+
+                transform.localScale = new Vector3(1, 1, 1f);
+            }
+            else
+            {
+
+                transform.localScale = new Vector3(-1, 1, 1f);
+            }
         }
     }
     private void Move()
@@ -103,7 +108,7 @@ public class DrunkBirdEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            script.TakeDamage(35);
+            GameManager.Instance.TakeDamage(attack);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Arrow"))
