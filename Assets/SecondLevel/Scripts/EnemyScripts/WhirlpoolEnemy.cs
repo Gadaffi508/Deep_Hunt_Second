@@ -80,7 +80,10 @@ public class WhirlpoolEnemy : MonoBehaviour
            
         }
     }
-
+    public void Animation()
+    {
+        animator.SetBool("damage", false);
+    }
 
     private void Whirlpool()
     {
@@ -101,6 +104,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            animator.SetBool("damage", true);
             Instantiate(effect1, pointEffect1.position, Quaternion.identity);
         }
     }
