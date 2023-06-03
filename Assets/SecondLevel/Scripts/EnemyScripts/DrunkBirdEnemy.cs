@@ -97,7 +97,10 @@ public class DrunkBirdEnemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, shipPosition, MoveSpeed * Time.deltaTime);
         transform.position = Vector2.MoveTowards(transform.position, tansformPosition, MoveSpeed * Time.deltaTime);
     }
-
+    public void Animation()
+    {
+        animator.SetBool("damage", false);
+    }
     private void Attack()
     {
         
@@ -113,6 +116,7 @@ public class DrunkBirdEnemy : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            animator.SetBool("damage",true);
             Instantiate(effect, effectpoint.position, Quaternion.identity);
         }
     }
