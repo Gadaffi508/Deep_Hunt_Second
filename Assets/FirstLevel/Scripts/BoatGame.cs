@@ -13,7 +13,6 @@ public class BoatGame : MonoBehaviour
     private void Start()
     {
         UpdateBoat(boatdbs);
-        Debug.Log(Load("direction"));
         Instantiate(artworkObject, artworkObject.transform.position, Quaternion.identity);
     }
 

@@ -22,25 +22,11 @@ public class BoatManager : MonoBehaviour
 
     public void ChangeScene(int sceneID)
     {
-        SceneManager.LoadScene(sceneID);
-    }
-    private void OnMouseDown()
-    {
-        ChangeScene(sceneID);
         Save("direction", direction);
+        SceneManager.LoadScene(sceneID);
     }
     public void Save(string KeyName, int _direction)
     {
         PlayerPrefs.SetInt(KeyName, _direction);
-    }
-    private void OnMouseEnter()
-    {
-        spt.sortingOrder = 2;
-        transform.localScale = new Vector2(1.25f,1.25f);
-    }
-    private void OnMouseExit()
-    {
-        spt.sortingOrder = 1;
-        transform.localScale = new Vector2(1, 1);
     }
 }
