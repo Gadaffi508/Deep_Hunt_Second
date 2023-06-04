@@ -136,11 +136,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7985603030482321204}
   hitObject: {fileID: 2264531828506860022}
-  effect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  effect: {fileID: 1040608886635896, guid: a97415c6b57076f41a6621a7b51d63a3, type: 3}
   effectpoint: {fileID: 6267013021351408896}
   AttackDistance: 15
   MoveSpeed: 1.5
   Force: 2100
+  attack: 0
 --- !u!50 &7985603030482321204
 Rigidbody2D:
   serializedVersion: 4

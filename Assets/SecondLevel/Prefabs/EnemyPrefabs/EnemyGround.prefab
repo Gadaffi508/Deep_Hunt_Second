@@ -169,7 +169,7 @@ MonoBehaviour:
   target: {fileID: 3563619576150474143, guid: 2beda5b7fb0a1904aa8cbe7c52c91cc9, type: 3}
   moveSpeed: 65
   prevMoveSpeed: 0
-  Effect: {fileID: 1040608886635896, guid: a97415c6b57076f41a6621a7b51d63a3, type: 3}
+  Effect: {fileID: 1040608886635896, guid: 7668d9af71f10c4478bde4127b941738, type: 3}
   effectPoint: {fileID: 5247659330181984041}
 --- !u!61 &4061449317861404778
 BoxCollider2D:
