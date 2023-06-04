@@ -39,7 +39,7 @@ public class DamageAndSlowHealth : MonoBehaviour
             EnemyHealtAndAttackScripts enemyHealth = enemy.GetComponent<EnemyHealtAndAttackScripts>();
             if (enemyHealth != null)
             {
-                enemyHealth.HasarVer(damageAmount);
+                enemyHealth.DamageHealth(damageAmount);
                 enemyHealth.attack = 3;
             }
         }

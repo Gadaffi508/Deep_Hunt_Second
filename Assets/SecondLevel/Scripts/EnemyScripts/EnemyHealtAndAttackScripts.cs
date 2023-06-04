@@ -53,12 +53,12 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
             }
             else
             {
-                HasarVer(hasarPerSaniye * Time.deltaTime); // Hasarý uygula
+                DamageHealth(hasarPerSaniye * Time.deltaTime); // Hasarý uygula
             }
         }
     }
 
-    public void HasarVer(float hasar)
+    public void DamageHealth(float hasar)
     {
         health -=hasar;
 
