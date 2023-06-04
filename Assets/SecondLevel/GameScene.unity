@@ -251,7 +251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &178061947
 GameObject:
@@ -319,7 +319,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197306263
 GameObject:
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274e97348036a68479b671f1c6dbcc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: 6b060e85be096a646b87a45d30c06779, type: 2}
+  bullet: {fileID: 11400000, guid: 28c20340c805e214f867574acdf40b66, type: 2}
   BulletSprite: {fileID: 307261061}
 --- !u!1 &368548044
 GameObject:
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274e97348036a68479b671f1c6dbcc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: c67014cdbb054b44e8103eeb3d0e7964, type: 2}
+  bullet: {fileID: 11400000, guid: d311a857f8e7f7647ab1d84495c680d6, type: 2}
   BulletSprite: {fileID: 679863479}
 --- !u!1 &697091982
 GameObject:
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerP: {fileID: 21210942353340201, guid: 7c555047a124dd9428a516b44a15f219, type: 3}
-  TowerRenderer: {fileID: 21300000, guid: 1f32b1e7f146a87479965aac99a6509c, type: 3}
+  TowerRenderer: {fileID: 21300000, guid: c453a04d5c73dff49ad4d4c951e63d8e, type: 3}
   TowerSprite: {fileID: 697091985}
 --- !u!114 &697091988
 MonoBehaviour:
@@ -1542,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 400}
+  m_AnchoredPosition: {x: 0, y: 590}
   m_SizeDelta: {x: 1500, y: 548}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735449307
@@ -1593,7 +1593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 100
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -1832,7 +1832,7 @@ Transform:
   m_Children:
   - {fileID: 964137199}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1167908615
 MonoBehaviour:
@@ -2023,7 +2023,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1321392482
 MonoBehaviour:
@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerP: {fileID: 21210942353340201, guid: feba35efb72532942992bd1b579bfad7, type: 3}
-  TowerRenderer: {fileID: 21300000, guid: 127b6b8f7bcbda74bb697005bbc7eeca, type: 3}
+  TowerRenderer: {fileID: 21300000, guid: 57f3f16b23c439a4fb2b08e0e8d2e850, type: 3}
   TowerSprite: {fileID: 1409821491}
 --- !u!114 &1409821494
 MonoBehaviour:
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274e97348036a68479b671f1c6dbcc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: 6b060e85be096a646b87a45d30c06779, type: 2}
+  bullet: {fileID: 11400000, guid: c67014cdbb054b44e8103eeb3d0e7964, type: 2}
   BulletSprite: {fileID: 1488247530}
 --- !u!1 &1620659212
 GameObject:
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerP: {fileID: 21210942353340201, guid: feba35efb72532942992bd1b579bfad7, type: 3}
-  TowerRenderer: {fileID: 21300000, guid: b5392ed4b6ed00e4f991a44537b0171d, type: 3}
+  TowerRenderer: {fileID: 21300000, guid: b5ea229deb1203849a8324e0f0b8973c, type: 3}
   TowerSprite: {fileID: 1669219248}
 --- !u!114 &1669219251
 MonoBehaviour:
@@ -3065,7 +3065,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789612250
 GameObject:
@@ -3097,7 +3097,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1789612252
 MonoBehaviour:
@@ -3106,7 +3106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789612250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7b44f83e6c15f347b6efb92c5f4c9c0, type: 3}
   m_Name: 
@@ -3522,7 +3522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2038767945
 GameObject:
@@ -3697,7 +3697,7 @@ RectTransform:
   - {fileID: 1453007917}
   - {fileID: 2038767946}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3839,8 +3839,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274e97348036a68479b671f1c6dbcc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: c67014cdbb054b44e8103eeb3d0e7964, type: 2}
+  bullet: {fileID: 11400000, guid: cb45b4e2f9916934fa85e26cccd1df56, type: 2}
   BulletSprite: {fileID: 2099592890}
+--- !u!1001 &2115446488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.043814
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.083486
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18158013825596485, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635882717636900947, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: m_Name
+      value: SwimEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318324546633115607, guid: b7438778231f1124aa10abccafd60316, type: 3}
+      propertyPath: damagetimeFire
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7438778231f1124aa10abccafd60316, type: 3}
 --- !u!1001 &3725516574042515867
 PrefabInstance:
   m_ObjectHideFlags: 0

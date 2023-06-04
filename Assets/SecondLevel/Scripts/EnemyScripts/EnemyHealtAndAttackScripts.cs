@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyHealtAndAttackScripts : MonoBehaviour
 {
     [Header("Healt")]
-    [SerializeField] private int health;
+    [SerializeField] private float health;
     [Header("Attack")]
     [SerializeField] public int attack;
 
@@ -15,6 +15,10 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
     public Transform effectPoint1;
     SpriteRenderer render;
     private EnemyMove move;
+
+    public float hasarSure = 5f; // Hasar süresi (saniye)
+    private float hasarPerSaniye = 1f; // Saniyede verilen hasar miktarý
+    public bool hasarVeriliyor = false;
     void Start()
     {
         move = GetComponent<EnemyMove>();
@@ -28,10 +32,35 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     }
 
-
-    public void DamageTaken(int damage)
+    IEnumerator Timer()
     {
-        health -= damage;
+        //animator.SetBool("Dead", true);
+        //move.moveSpeed = 0;
+        yield return new WaitForSeconds(0.5f);
+        render.enabled = false;
+        Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        if (hasarVeriliyor && health > 0) // Hasar veriliyorsa ve düþman ölmediyse
+        {
+            hasarSure -= Time.deltaTime; // Zamaný güncelle
+            if (hasarSure <= 0) // Hasar süresi tamamlandýysa
+            {
+                hasarVeriliyor = false; // Hasar verme durdurulur
+            }
+            else
+            {
+                HasarVer(hasarPerSaniye * Time.deltaTime); // Hasarý uygula
+            }
+        }
+    }
+
+    public void HasarVer(float hasar)
+    {
+        health -=hasar;
 
         if (health <= 0)
         {
@@ -41,16 +70,6 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
             Debug.Log("Öldüm");
         }
-    }
-
-    IEnumerator Timer()
-    {
-        //animator.SetBool("Dead", true);
-        //move.moveSpeed = 0;
-        yield return new WaitForSeconds(0.5f);
-        render.enabled = false;
-        Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 
 }

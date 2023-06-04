@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5505078924338910333}
   - component: {fileID: 3038962198651966914}
-  - component: {fileID: 2538685215943038694}
   - component: {fileID: 1346595840320292313}
   - component: {fileID: 4920332025692544161}
+  - component: {fileID: 4496450913993772588}
   m_Layer: 7
   m_Name: Arrow 2
   m_TagString: Arrow
@@ -87,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2538685215943038694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8268947992135232424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fc8822273ebc24b97a5b9bbf741253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4920332025692544161}
-  rowSpeed: 35
-  Damage: 0
-  Name: RedArrow
 --- !u!58 &1346595840320292313
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,3 +124,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &4496450913993772588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8268947992135232424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251cc91536494954099cfbc0f380fc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4920332025692544161}
+  rowSpeed: 10
+  Damage: 15
+  Name: 
+  target: {fileID: 0}
+  maxRicohetSayisi: 2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowScripts : MonoBehaviour
+public abstract class ArrowScripts : MonoBehaviour
 {
     [Header("References")]
     public Rigidbody2D rb;
@@ -12,12 +12,9 @@ public class ArrowScripts : MonoBehaviour
     public int Damage;
     public string Name;
 
-    private Transform target;
-    private EnemyHealtAndAttackScripts script;
-
+    public Transform target;
     private void Start()
     {
-        script = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealtAndAttackScripts>();
         Damage = 15;
         Destroy(gameObject, 1.5f);
     }
@@ -44,16 +41,17 @@ public class ArrowScripts : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().DamageTaken(Damage);
-            Destroy(gameObject);
+            EnemyAttack(collision);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().DamageTaken(Damage);
-            Destroy(gameObject);
+            EnemyAttack(collision);
         }
     }
+
+    public abstract void EnemyAttack(Collision2D collision);
+    public abstract void EnemyAttack(Collider2D collision);
 }
