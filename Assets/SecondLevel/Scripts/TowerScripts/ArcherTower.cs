@@ -16,12 +16,13 @@ public class ArcherTower : MonoBehaviour
     public float nextPrefab;
     public GameObject bombEffect;
     BoatController boat;
-
+    private AudioSource audio;
+    public AudioClip bomb;
     private void Start()
     {
         enemyLayer = LayerMask.NameToLayer("Enemy");
         boat = GameObject.FindGameObjectWithTag("Ship").gameObject.GetComponent<BoatController>();
-        
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,6 +49,7 @@ public class ArcherTower : MonoBehaviour
             {
                 ProjectTileFire(enemy);
                 nextPrefab = 0;
+                audio.PlayOneShot(bomb);
                 Instantiate(bombEffect, effectPos.position, Quaternion.identity);
 
             }

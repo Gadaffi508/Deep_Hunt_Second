@@ -19,12 +19,16 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
     public float hasarSure = 5f; // Hasar süresi (saniye)
     private float hasarPerSaniye = 1f; // Saniyede verilen hasar miktarý
     public bool hasarVeriliyor = false;
+    private AudioSource audio;
+    public AudioClip deadSound;
+   
     void Start()
     {
         move = GetComponent<EnemyMove>();
         render = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         render.enabled = true;
+        audio = GetComponent<AudioSource>();
     }
     public void TakeDamage()
     {
@@ -39,6 +43,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         render.enabled = false;
         Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
+        audio.PlayOneShot(deadSound);
         Destroy(gameObject);
     }
 
@@ -60,8 +65,9 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     public void DamageHealth(float hasar)
     {
+      
         health -=hasar;
-
+       
         if (health <= 0)
         {
             GameManager.Instance.Gold += 15;
@@ -71,5 +77,5 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
             Debug.Log("Öldüm");
         }
     }
-
+  
 }

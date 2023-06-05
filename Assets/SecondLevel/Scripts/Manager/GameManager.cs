@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
     public Image Healtbar;
     public GameObject HealtbarBG;
 
+    private AudioSource audio;
+
+    public AudioClip[] DamageSounds;
     public static GameManager Instance;
 
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         Instance = this;
     }
 
@@ -46,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        int random = Random.Range(0, DamageSounds.Length);
+        audio.PlayOneShot(DamageSounds[random]);
         Health -= damage;
         Healtbar.fillAmount = Health / 100;
     }

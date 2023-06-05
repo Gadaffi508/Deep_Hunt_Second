@@ -48,11 +48,15 @@ public class DamageAndSlowHealth : MonoBehaviour
         // OverlapBoxAll dýþýndayken, enemyHealth.behind = false yapýlabilir
         foreach (Collider2D enemy in hitEnemies)
         {
-            EnemyHealtAndAttackScripts enemyHealth = enemy.GetComponent<EnemyHealtAndAttackScripts>();
-            if (enemyHealth != null)
+            if (enemy != null)
             {
-                enemyHealth.attack = 8;
+                EnemyHealtAndAttackScripts enemyHealth = enemy.GetComponent<EnemyHealtAndAttackScripts>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.attack = 8;
+                }
             }
+          
         }
     }
 

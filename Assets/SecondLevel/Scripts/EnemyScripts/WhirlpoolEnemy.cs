@@ -22,6 +22,8 @@ public class WhirlpoolEnemy : MonoBehaviour
     private Rigidbody2D rb;
     private Transform target;
     private Animator animator;
+    private AudioSource audio;
+    public AudioClip blob;
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.white;
@@ -30,7 +32,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-      
+        audio = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
     private void Update()
@@ -63,17 +65,19 @@ public class WhirlpoolEnemy : MonoBehaviour
 
         if (hits)
         {
-           
+            
             transform.DOMoveY(-7.5f, 1).OnComplete(() =>
             {
+               
                 Speed = 0;
+               
                 Whirlpool();
             });
         }
         else 
         {
             animator.SetBool("touched", false);
-            transform.DOMoveY(-4.5f, 1).OnComplete(() =>
+            transform.DOMoveY(-5.2f, 1).OnComplete(() =>
             {
                 Speed = 75;
             });
@@ -88,6 +92,7 @@ public class WhirlpoolEnemy : MonoBehaviour
     private void Whirlpool()
     {
         Instantiate(effect,pointEffect.position,Quaternion.identity);
+        
         if (transform.position.x > target.position.x)
         {
             target.transform.Translate(Force,0,0);
@@ -107,6 +112,20 @@ public class WhirlpoolEnemy : MonoBehaviour
             animator.SetBool("damage", true);
             Instantiate(effect1, pointEffect1.position, Quaternion.identity);
         }
+        if (collision.gameObject.CompareTag("Sea"))
+        {
+            audio.PlayOneShot(blob);
+        }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Sea"))
+        {
+            audio.PlayOneShot(blob);
+        }
+    }
+
+
 
 }

@@ -4716,6 +4716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Okay: 0
+  damageAudios: []
   OnlyDeactivate: 0
 --- !u!212 &4431090579469135046
 SpriteRenderer:

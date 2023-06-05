@@ -177,6 +177,9 @@ MonoBehaviour:
   attack: 10
   puffEffect: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
   effectPoint1: {fileID: 2723815433557370504}
+  hasarSure: 5
+  hasarVeriliyor: 0
+  deadSound: {fileID: 8300000, guid: 9f0aa4236ae70cf4b8eb2f173e91a001, type: 3}
 --- !u!95 &2658572946455380324
 Animator:
   serializedVersion: 4

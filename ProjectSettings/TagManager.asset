@@ -26,6 +26,8 @@ TagManager:
   - Stone
   - GameManager
   - EnemyBullet
+  - FxTemporaire
+  - Sea
   layers:
   - Default
   - TransparentFX

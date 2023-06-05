@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DrunkBirdEnemy : MonoBehaviour
@@ -22,11 +23,12 @@ public class DrunkBirdEnemy : MonoBehaviour
     private EnemyHealtAndAttackScripts script;
     private Animator animator;
     private Transform target;
-
+    private AudioSource audio;
+    public AudioClip blopSea;
     public float attack;
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         script = GetComponent<EnemyHealtAndAttackScripts>();
         animator = GetComponent<Animator>();
@@ -119,6 +121,13 @@ public class DrunkBirdEnemy : MonoBehaviour
             animator.SetBool("damage",true);
             Instantiate(effect, effectpoint.position, Quaternion.identity);
         }
+        if (collision.gameObject.CompareTag("Sea"))
+        {
+            audio.PlayOneShot(blopSea);
+            Destroy(gameObject);
+        }
     }
+
+
    
 }
