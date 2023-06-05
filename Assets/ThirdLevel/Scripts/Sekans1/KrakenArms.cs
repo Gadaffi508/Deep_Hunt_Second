@@ -10,8 +10,11 @@ public class KrakenArms : MonoBehaviour
     public float upVeloctiy,Force;
 
     private KrakenArmRock armRock;
+
+    private Animator animator;
     void Start()
     {
+       
         ArmSpawn();
         armRock = GameObject.FindGameObjectWithTag("krakenArm").GetComponent<KrakenArmRock>();
     }
@@ -25,17 +28,23 @@ public class KrakenArms : MonoBehaviour
     {
         for (int i = 0; i < points.Length; i++)
         {
-            
-            GameObject arms = Instantiate(arm,points[i].position,Quaternion.identity);
-            arms.transform.Rotate(180,0,0);
-            arms.transform.DOMoveY(-2.5f, 1f).OnComplete(() =>
-            {
-                arms.transform.DOMoveY(-2.5f, 4f).OnComplete(() =>
-                {
 
-                    arms.transform.DOMoveY(-10, 2f).OnComplete(() =>
+            GameObject arms = Instantiate(arm, points[i].position, Quaternion.identity);
+            animator = GameObject.FindGameObjectWithTag("krakenArm").GetComponent<Animator>();
+           
+            arms.transform.DOMoveY(-3.5f, 1f).OnComplete(() =>
+            {
+               
+                arms.transform.DOMoveY(-3.5f, 2f).OnComplete(() =>
+                {
+                    animator.SetBool("Exit", true);
+                    arms.transform.DOMoveY(-3.5f, 2f).OnComplete(() =>
                     {
-                        Destroy(arms);
+                        arms.transform.DOMoveY(-10, 2f).OnComplete(() =>
+                        {
+                            animator.SetBool("Exit", false);
+                            Destroy(arms);
+                        });
                     });
                 }); 
             });
