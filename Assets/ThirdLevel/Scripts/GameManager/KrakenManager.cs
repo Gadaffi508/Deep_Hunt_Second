@@ -9,6 +9,8 @@ public class KrakenManager : MonoBehaviour
     public GameObject Kraken;
     public bool above = false;
     private Animator animator;
+
+    
     void Start()
     {
         animator = GameObject.FindGameObjectWithTag("Kraken").GetComponent<Animator>();
