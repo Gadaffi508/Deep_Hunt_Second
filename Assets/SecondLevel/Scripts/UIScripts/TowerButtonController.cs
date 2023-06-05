@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TowerButtonController : MonoBehaviour
 {
-    [SerializeField] BuilTower[] allButtons;
+    [SerializeField] BuiltTower[] allButtons;
 
     private tower currentArea;
     public tower SetTower(tower tower) => currentArea = tower;

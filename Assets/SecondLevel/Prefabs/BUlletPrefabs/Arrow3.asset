@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8268947992135232424, guid: bbab0ab6987b76e4dbb2e5b2624849c5, type: 3}
   spt: {fileID: 3038962198651966914, guid: bbab0ab6987b76e4dbb2e5b2624849c5, type: 3}
-  bulletCurrent: {fileID: 2665478812183213191, guid: bbab0ab6987b76e4dbb2e5b2624849c5, type: 3}
+  bulletCurrent: {fileID: -1146750262721776728, guid: bbab0ab6987b76e4dbb2e5b2624849c5, type: 3}

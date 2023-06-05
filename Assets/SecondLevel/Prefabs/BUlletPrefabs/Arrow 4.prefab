@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3038962198651966914}
   - component: {fileID: 1346595840320292313}
   - component: {fileID: 4920332025692544161}
-  - component: {fileID: 2665478812183213191}
+  - component: {fileID: -1146750262721776728}
   m_Layer: 7
   m_Name: Arrow 4
   m_TagString: Arrow
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2665478812183213191
+--- !u!114 &-1146750262721776728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,10 +133,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8268947992135232424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48fcac8906b8ae64d85ad64140bf9f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 236e5f233ae929c4ba7c646ee4b6ed76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4920332025692544161}
   rowSpeed: 10
-  Damage: 15
+  Damage: 5
   Name: 
+  target: {fileID: 0}
+  explosionRadius: 3
+  freezeDuration: 5

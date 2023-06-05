@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1346595840320292313}
   - component: {fileID: 4920332025692544161}
   - component: {fileID: -5406419669466288976}
-  - component: {fileID: 1164478181289888979}
+  - component: {fileID: -3641518491960312779}
   m_Layer: 7
   m_Name: Arrow 3
   m_TagString: Arrow
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1164478181289888979
+--- !u!114 &-3641518491960312779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,10 +133,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8268947992135232424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48fcac8906b8ae64d85ad64140bf9f41, type: 3}
+  m_Script: {fileID: 11500000, guid: d9b749e6cff76a24e9dc269f0118d418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4920332025692544161}
   rowSpeed: 10
-  Damage: 15
+  Damage: 0
   Name: 
+  target: {fileID: 0}
+  maxDamage: 50
+  minDamage: 1
+  maxDistance: 2
+  minDistance: 0.1

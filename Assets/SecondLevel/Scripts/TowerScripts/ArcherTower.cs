@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class ArcherTower : MonoBehaviour
 {
+    [Header("Upgrade Tower")]
+    [SerializeField] GameObject upgradeTower;
+    [Space]
+
     public float OverlapRadius = 2.0f;
 
     public Transform nearestEnemy;
@@ -100,5 +104,11 @@ public class ArcherTower : MonoBehaviour
         {
             transform.localScale = new Vector2(-1, 1);
         }
+    }
+    public void UpgradeTowerButton()
+    {
+        Destroy(gameObject, 0.2f);
+        Instantiate(upgradeTower, transform.position, Quaternion.identity);
+        Debug.Log("çalýþtý");
     }
 }

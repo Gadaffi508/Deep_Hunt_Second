@@ -138,7 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4920332025692544161}
   rowSpeed: 10
-  Damage: 15
+  Damage: 5
   Name: 
   target: {fileID: 0}
-  maxRicohetSayisi: 2
+  hedefler: []
+  targetnow: 0

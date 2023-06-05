@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BuilTower : MonoBehaviour
+public class BuiltTower : MonoBehaviour
 {
     public GameObject towerP;
     public Sprite TowerRenderer;

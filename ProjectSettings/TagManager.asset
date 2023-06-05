@@ -28,6 +28,7 @@ TagManager:
   - EnemyBullet
   - FxTemporaire
   - Sea
+  - Panelthree
   layers:
   - Default
   - TransparentFX

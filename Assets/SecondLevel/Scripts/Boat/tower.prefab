@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5d9536cd7e0a943b6898eec77ba87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeTower: {fileID: 4942850376932654495, guid: 472027ad417808e4db7f9c48264accec, type: 3}
   OverlapRadius: 7.3
   nearestEnemy: {fileID: 0}
   rotateFire: {fileID: 621758480841080324}
@@ -366,6 +367,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   gunInfoPanel: {fileID: 0}
+  TowerUpgrade: {fileID: 0}
 --- !u!61 &6598605619439820119
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
     public bool hasarVeriliyor = false;
     private AudioSource audio;
     public AudioClip deadSound;
-   
+
     void Start()
     {
         move = GetComponent<EnemyMove>();
@@ -42,8 +42,8 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         //move.moveSpeed = 0;
         yield return new WaitForSeconds(0.5f);
         render.enabled = false;
+        //audio.PlayOneShot(deadSound);
         Instantiate(puffEffect, effectPoint1.position, Quaternion.identity);
-        audio.PlayOneShot(deadSound);
         Destroy(gameObject);
     }
 
@@ -61,6 +61,8 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
                 DamageHealth(hasarPerSaniye * Time.deltaTime); // Hasarý uygula
             }
         }
+
+        
     }
 
     public void DamageHealth(float hasar)
@@ -77,5 +79,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
             Debug.Log("Öldüm");
         }
     }
-  
+
+    
+
 }
