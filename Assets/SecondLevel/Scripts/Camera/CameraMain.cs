@@ -12,8 +12,11 @@ public class CameraMain : MonoBehaviour
     [Space]
     private bool titremeDevamEdiyor = false;
     private Vector3 orijinalPozisyon;
-    private float titremeSiddeti = 0.5f;
-    private float titremeSure = 0.3f;
+    private float titremeSiddeti = 0.1f;
+    private float titremeSure = 1f;
+
+   
+   
 
     public GameObject Fog;
 

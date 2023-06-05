@@ -29,6 +29,7 @@ TagManager:
   - FxTemporaire
   - Sea
   - Panelthree
+  - Kraken
   layers:
   - Default
   - TransparentFX

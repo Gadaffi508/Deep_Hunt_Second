@@ -7,16 +7,18 @@ public class DrunkSpawn : MonoBehaviour
     public Transform[] point;
     public GameObject Enemy;
     private Transform target;
+    private Animator animator;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Ship").transform;
-      
+        animator = GetComponent<Animator>();
         
     }
 
     
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ChangePosition();
@@ -24,7 +26,12 @@ public class DrunkSpawn : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            animator.SetBool("krakenScream", true);
             DrunkEnemySpawn();
+        }
+        else
+        {
+            animator.SetBool("krakenScream", false);
         }
     }
 
@@ -48,12 +55,13 @@ public class DrunkSpawn : MonoBehaviour
 
     private void DrunkEnemySpawn()
     {
+       
         for (int i = 0; i < point.Length; i++)
         {
-            GameObject enemy = Instantiate(Enemy, point[i].position,Quaternion.identity);
+            GameObject enemy = Instantiate(Enemy, point[i].position,Quaternion.identity); 
         }
 
-        
+       
     }
 
    
