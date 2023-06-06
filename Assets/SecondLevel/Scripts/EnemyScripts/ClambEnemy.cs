@@ -11,11 +11,12 @@ public class ClambEnemy : MonoBehaviour
     [Space]
     [SerializeField] private int damage;
 
+    private Animator animator;
     private Rigidbody2D rb;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        animator = rb.GetComponent<Animator>();
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
@@ -32,6 +33,7 @@ public class ClambEnemy : MonoBehaviour
     public void OnTrigger(BoatController boat)
     {
         //Set Damage
+        animator.SetBool("isCollision",true);
         GameManager.Instance.TakeDamage(damage);
 
         //SetParent
@@ -48,6 +50,7 @@ public class ClambEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow"))
         {
+            animator.SetBool("death",true);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
