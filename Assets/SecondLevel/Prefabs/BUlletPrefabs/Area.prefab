@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenTowerObject:
     serializedVersion: 2
-    m_Bits: 576
-  Tower: {fileID: 4942850376932654495, guid: feba35efb72532942992bd1b579bfad7, type: 3}
+    m_Bits: 64
+  TowerPanel: {fileID: 0}
 --- !u!58 &7024776210089142285
 CircleCollider2D:
   m_ObjectHideFlags: 0

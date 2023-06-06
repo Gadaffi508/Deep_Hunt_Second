@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1608807082651561912}
   - component: {fileID: 1608807082651561913}
   - component: {fileID: 1608807082651561914}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Boat 1
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 6126883207711511989}
   - component: {fileID: 7195113547098941708}
   - component: {fileID: 8399949488841186231}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: DamageAndSlowHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5405113573087445419, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_RootOrder

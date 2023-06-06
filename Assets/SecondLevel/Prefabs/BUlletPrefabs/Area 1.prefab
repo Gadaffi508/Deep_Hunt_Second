@@ -116,5 +116,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenTowerObject:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 64
   TowerPanel: {fileID: 0}

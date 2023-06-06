@@ -6,8 +6,8 @@ public class TowerTopController : MonoBehaviour
 {
     [SerializeField] BuiltTower[] allButtons;
 
-    private TowerUp currentArea;
-    public TowerUp SetTower(TowerUp towerU) => currentArea = towerU;
+    private TowerUp currentAreaU;
+    public TowerUp SetTower(TowerUp towerU) => currentAreaU = towerU;
 
     //Event Implements
     private void OnEnable()
@@ -26,9 +26,9 @@ public class TowerTopController : MonoBehaviour
     }
     private void ButtonClick(GameObject _Tower)
     {
-        if (currentArea != null)
+        if (currentAreaU != null)
         {
-            currentArea.TowerBuilt(_Tower);
+            currentAreaU.TowerBuilt(_Tower);
         }
     }
 }
