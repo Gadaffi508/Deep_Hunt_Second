@@ -30,6 +30,8 @@ TagManager:
   - Sea
   - Panelthree
   - Kraken
+  - Panelfour
+  - PanelFive
   layers:
   - Default
   - TransparentFX
