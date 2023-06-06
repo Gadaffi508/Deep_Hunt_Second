@@ -109,5 +109,6 @@ public class ArcherTower : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(upgradeTower, transform.position, Quaternion.identity);
+        GetComponentInChildren<Try>().CloseTower();
     }
 }

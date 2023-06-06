@@ -19,11 +19,11 @@ public class ClambEnemy : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
-    
+
     void FixedUpdate()
     {
         rb.velocity = Vector2.zero;
-        if(transform.position.y < maxHeight)
+        if (transform.position.y < maxHeight)
         {
             rb.velocity = -Vector2.down * speed;
         }
@@ -41,7 +41,7 @@ public class ClambEnemy : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         speed = 0;
 
-        Destroy(this);
+        //Destroy(this,1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
