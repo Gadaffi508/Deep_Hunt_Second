@@ -12,19 +12,26 @@ public class KrakenArms : MonoBehaviour
     private KrakenArmRock armRock;
 
     private Animator animator;
-    void Start()
-    {
-       
-        ArmSpawn();
-        armRock = GameObject.FindGameObjectWithTag("krakenArm").GetComponent<KrakenArmRock>();
-    }
+    private KrakenManager manager;
+   
 
-    private void ArmSpawn()
+    public void BossSekans1Calistir()
     {
         StartCoroutine(timer());
     }
 
-    IEnumerator timer()
+    void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
+
+       
+    }
+
+  public void armSpawner()
+    {
+
+    }
+     IEnumerator timer()
     {
         for (int i = 0; i < points.Length; i++)
         {
@@ -42,7 +49,7 @@ public class KrakenArms : MonoBehaviour
                     {
                         animator.SetBool("Exit", false);
                         animator.SetBool("input", true);
-                        arms.transform.DOMoveY(-7, 3f).OnComplete(() =>
+                        arms.transform.DOMoveY(-7, 1f).OnComplete(() =>
                         {
                             animator.SetBool("input", false);
                             Destroy(arms);
@@ -54,7 +61,7 @@ public class KrakenArms : MonoBehaviour
             yield return new WaitForSeconds(9f);
 
         }
-        ArmSpawn();
+        BossSekans1Calistir();
 
     }
 

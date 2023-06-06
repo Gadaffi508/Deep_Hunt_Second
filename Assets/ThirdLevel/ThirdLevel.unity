@@ -379,6 +379,95 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &293396118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293396120}
+  - component: {fileID: 293396119}
+  m_Layer: 0
+  m_Name: BossEvent (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &293396119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293396118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a793a7c88ee0942b5a3f7c47a65b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEvent1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2013230603}
+        m_TargetAssemblyTypeName: BossEventHandlers, Assembly-CSharp
+        m_MethodName: HandleBossEvent1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  bossEvent2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2013230603}
+        m_TargetAssemblyTypeName: BossEventHandlers, Assembly-CSharp
+        m_MethodName: HandleBossEvent2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  bossEvent3:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2013230603}
+        m_TargetAssemblyTypeName: BossEventHandlers, Assembly-CSharp
+        m_MethodName: HandleBossEvent3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &293396120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293396118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8172246, y: -1.0860955, z: -0.06504696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369495599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080272415}
+  - component: {fileID: 1080272421}
   - component: {fileID: 1080272419}
   - component: {fileID: 1080272416}
   - component: {fileID: 1080272417}
@@ -1110,7 +1200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ade807bb22b974e8b6aaffbfcc1c21, type: 3}
   m_Name: 
@@ -1130,7 +1220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 263f938d4619d0948bb3cbef19969e05, type: 3}
   m_Name: 
@@ -1220,7 +1310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4046442986d175244a97913f0468ecd5, type: 3}
   m_Name: 
@@ -1229,6 +1319,20 @@ MonoBehaviour:
   Points:
   - {fileID: 89420730}
   - {fileID: 708660040}
+--- !u!114 &1080272421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080272414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd3c71eaff66cb4db87755c8c7117b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bosseventNum: 1
+  fireRate: 1
 --- !u!1 &1104872867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1997,7 @@ GameObject:
   - component: {fileID: 1537212673}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1928,6 +2032,7 @@ MonoBehaviour:
   krakenHealth: 60
   Kraken: {fileID: 1080272414}
   above: 1
+  aktifSekans: 2
 --- !u!1 &1644681516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2507,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 31.76219, y: 0.9655113}
   m_EdgeRadius: 0
+--- !u!1 &2013230602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013230604}
+  - component: {fileID: 2013230603}
+  m_Layer: 0
+  m_Name: BossEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2013230603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013230602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7140c2a1f5e9eb14cb629b1b7894e732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  krakenArmSlap: {fileID: 1080272420}
+  krakenArms: {fileID: 1080272416}
+  drunkSpawn: {fileID: 1080272417}
+--- !u!4 &2013230604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013230602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8172246, y: -1.0860955, z: -0.06504696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017008976
 GameObject:
   m_ObjectHideFlags: 0

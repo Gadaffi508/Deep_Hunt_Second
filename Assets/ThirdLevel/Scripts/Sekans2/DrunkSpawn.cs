@@ -8,31 +8,39 @@ public class DrunkSpawn : MonoBehaviour
     public GameObject Enemy;
     private Transform target;
     private Animator animator;
+    private KrakenManager manager;
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
         target = GameObject.FindGameObjectWithTag("Ship").transform;
         animator = GetComponent<Animator>();
-        
+
     }
+    //void OnEnable()
+    //{
+    //    manager.BossSekans3Tetiklendi += BossSekans3Calistir;
+
+    //}
+    //void OnDisable()
+    //{
+    //    manager.BossSekans3Tetiklendi -= BossSekans3Calistir;
+
+    //}
+
+    void BossSekans3Calistir()
+    {
+        animator.SetBool("krakenScream", true);
+        DrunkEnemySpawn();
+    }
+  
 
     
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangePosition();
-        }
+       
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.SetBool("krakenScream", true);
-            DrunkEnemySpawn();
-        }
-        else
-        {
-            animator.SetBool("krakenScream", false);
-        }
+       
     }
 
     private void ChangePosition()
@@ -53,15 +61,15 @@ public class DrunkSpawn : MonoBehaviour
         } 
     }
 
-    private void DrunkEnemySpawn()
+    public void DrunkEnemySpawn()
     {
-       
+        ChangePosition();
         for (int i = 0; i < point.Length; i++)
         {
             GameObject enemy = Instantiate(Enemy, point[i].position,Quaternion.identity); 
         }
 
-       
+        animator.SetBool("krakenScream", false);
     }
 
    

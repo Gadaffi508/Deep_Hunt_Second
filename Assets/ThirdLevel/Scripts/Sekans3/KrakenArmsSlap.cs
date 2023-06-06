@@ -9,10 +9,20 @@ public class KrakenArmsSlap : MonoBehaviour
     private Transform ship;
     public Transform[] Points;
     private Vector2 spawnPoint;
+    private KrakenManager manager;
+   
+
+   
+
+   public  void BossSekans2Calistir()
+    {
+        StartCoroutine(Timer());
+    }
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
-        StartCoroutine(Timer());
+       
     }
   
 
@@ -29,7 +39,7 @@ public class KrakenArmsSlap : MonoBehaviour
     IEnumerator Timer()
     {
         ArmSpawner();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(9);
         StartCoroutine(Timer());
     }
 }
