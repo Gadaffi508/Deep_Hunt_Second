@@ -51,7 +51,7 @@ public class KrakenArms : MonoBehaviour
                 }); 
             });
             
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(9f);
 
         }
         ArmSpawn();
