@@ -35,7 +35,7 @@ public class Try : BoatTowerController
         if (TowerUpgrade != null)
         {
             TowerUpgrade.transform.DOMoveY(500, 1);
-            TowerUpgrade.GetComponent<TowerUpgrade>();
+            TowerUpgrade.GetComponent<TowerUpgradeController>().SetTower(tower);
         }
     }
 }

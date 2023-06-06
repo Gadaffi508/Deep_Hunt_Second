@@ -16,7 +16,6 @@ public abstract class ArrowScripts : MonoBehaviour
     private void Start()
     {
         Damage = 15;
-        Destroy(gameObject, 1.5f);
     }
 
     public void SetTarget(Transform _target)

@@ -107,8 +107,7 @@ public class ArcherTower : MonoBehaviour
     }
     public void UpgradeTowerButton()
     {
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject);
         Instantiate(upgradeTower, transform.position, Quaternion.identity);
-        Debug.Log("çalýþtý");
     }
 }

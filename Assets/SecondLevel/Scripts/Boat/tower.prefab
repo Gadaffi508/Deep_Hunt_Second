@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5d9536cd7e0a943b6898eec77ba87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeTower: {fileID: 4942850376932654495, guid: 472027ad417808e4db7f9c48264accec, type: 3}
+  upgradeTower: {fileID: 21210942353340201, guid: 7c555047a124dd9428a516b44a15f219, type: 3}
   OverlapRadius: 7.3
   nearestEnemy: {fileID: 0}
   rotateFire: {fileID: 621758480841080324}

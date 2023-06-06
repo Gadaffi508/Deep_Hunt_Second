@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ClambEnemy : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform target;
-
     [Header("Attribute")]
     [SerializeField] private float speed;
     [SerializeField] private float maxHeight = -5.5f;
@@ -35,7 +32,7 @@ public class ClambEnemy : MonoBehaviour
     public void OnTrigger(BoatController boat)
     {
         //Set Damage
-        boat.DamageSlow(damage);
+        GameManager.Instance.TakeDamage(damage);
 
         //SetParent
         transform.SetParent(boat.gameObject.transform);
@@ -45,5 +42,14 @@ public class ClambEnemy : MonoBehaviour
         speed = 0;
 
         Destroy(this);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
