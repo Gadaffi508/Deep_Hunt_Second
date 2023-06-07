@@ -69,7 +69,7 @@ public class DrunkSpawn : MonoBehaviour
             GameObject enemy = Instantiate(Enemy, point[i].position,Quaternion.identity); 
         }
 
-        animator.SetBool("krakenScream", false);
+       
     }
 
    

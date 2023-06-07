@@ -9,44 +9,108 @@ public class BossEnemy : MonoBehaviour
 
     public float fireRate;
     private float nextFireRate;
+    private Animator animator;
+
+
+    
     private void Start()
     {
         bossEventManager = FindObjectOfType<BossEventManager>();
+        animator = GetComponent<Animator>();        
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Boss düþmanýnýn davranýþýný kontrol et
         // Belirli koþullar gerçekleþtiðinde ilgili olayý tetikle
-        if (bosseventNum == 1)
-        {
-            if (nextFireRate < Time.time)
+
+        if (HealthAboveThreshold()) {
+
+            if (TimeElapsedEvent1())
             {
                 bossEventManager.TriggerBossEvent1();
-                nextFireRate = Time.time + 1 / fireRate;
-                bosseventNum = 2;
+                animator.SetBool("krakenScream", false);
             }
-           
         }
-        else if (bosseventNum == 2)
+        else if (HealthBelowThreshold())
         {
-            if (nextFireRate < Time.time)
-            {
-                bossEventManager.TriggerBossEvent2();
-                nextFireRate = Time.time + 1 / fireRate;
-                bosseventNum = 3;
-            }
-           
-        }
-        else if (bosseventNum == 3)
-        {
-            if (nextFireRate < Time.time)
+            if (TimeElapsedEvent2())
             {
                 bossEventManager.TriggerBossEvent3();
-                nextFireRate = Time.time + 1 / fireRate;
-                bosseventNum = 1;
+                animator.SetBool("krakenScream", true);
             }
-
+            else if (TimeElapsedEvent1())
+            {
+                bossEventManager.TriggerBossEvent1();
+                animator.SetBool("krakenScream", false);
+            }
+            else
+            {
+                animator.SetBool("krakenScream", false);
+            }           
         }
+       
+
+     
+
+
+        Debug.Log(TimeElapsedEvent1());
+
+       
+    }
+
+    public float elapsedTimeEvent1 = 0f;
+    public float targetTimeEvent1 = 0f;
+
+    private bool TimeElapsedEvent1()
+    {
+        elapsedTimeEvent1 += Time.deltaTime;
+
+        if (elapsedTimeEvent1 >= targetTimeEvent1)
+        {
+            elapsedTimeEvent1 = 0f;
+            return true;
+        }
+
+        return false;
+    }
+    public float elapsedTimeEvent2 = 0f;
+    public float targetTimeEvent2 = 0f;
+    private bool TimeElapsedEvent2()
+    {
+        elapsedTimeEvent2 += Time.deltaTime;
+
+        if (elapsedTimeEvent2 >= targetTimeEvent2)
+        {
+            elapsedTimeEvent2 = 0f;
+            return true;
+        }
+
+        return false;
+    }
+
+    public float health = 100f;
+    public float threshold = 30f;
+
+    private bool HealthBelowThreshold()
+    {
+
+        if (health <= threshold)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool HealthAboveThreshold()
+    {
+
+        if (health >= threshold)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

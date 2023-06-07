@@ -16,7 +16,7 @@ public class KrakenArmsSlap : MonoBehaviour
 
    public  void BossSekans2Calistir()
     {
-        StartCoroutine(Timer());
+        ArmSpawner();
     }
     void Start()
     {
@@ -36,10 +36,5 @@ public class KrakenArmsSlap : MonoBehaviour
       
     }
 
-    IEnumerator Timer()
-    {
-        ArmSpawner();
-        yield return new WaitForSeconds(9);
-        StartCoroutine(Timer());
-    }
+  
 }
