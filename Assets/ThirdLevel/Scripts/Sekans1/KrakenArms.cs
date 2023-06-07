@@ -10,7 +10,15 @@ public class KrakenArms : MonoBehaviour
     private KrakenArmRock armRock;
     private Animator animator;
 
+    private void Start()
+    {
+        
+    }
     public void BossSekans1Calistir()
+    {
+        StartCoroutine(Timer());
+    }
+    IEnumerator Timer()
     {
         for (int i = 0; i < points.Length; i++)
         {
@@ -36,7 +44,10 @@ public class KrakenArms : MonoBehaviour
                     });
                 });
             });
+            yield return new WaitForSeconds(7);
         }
+
     }
 }
+
 

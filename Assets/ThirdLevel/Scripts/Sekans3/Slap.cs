@@ -16,10 +16,10 @@ public class Slap : MonoBehaviour
         {
             transform.localScale = new Vector3(-1,1,1);
         }
-        transform.DOMoveY(-3.4f, 1f).OnComplete(() =>
+        transform.DOMoveY(-4.7f, 1f).OnComplete(() =>
         {
             animator.SetBool("Exit", true);
-            transform.DOMoveY(-3.4f, 2f).OnComplete(() => {
+            transform.DOMoveY(-4.7f, 2f).OnComplete(() => {
                 animator.SetBool("Exit", false);
                 transform.DOMoveY(-7f, 1).OnComplete(() => {
                     Destroy(gameObject);

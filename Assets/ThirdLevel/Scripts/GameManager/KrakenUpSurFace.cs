@@ -23,7 +23,7 @@ public class KrakenUpSurFace : MonoBehaviour
     {
            animator.SetBool("exit", true);
            animator.SetBool("input", false);
-           Kraken.transform.DOMoveY(-3, 0.7f).OnComplete(() =>
+           Kraken.transform.DOMoveY(-3.5f, 0.7f).OnComplete(() =>
            {
                animator.SetBool("exit", false);
            });
@@ -33,6 +33,6 @@ public class KrakenUpSurFace : MonoBehaviour
     {
             animator.SetBool("input", true);
             animator.SetBool("exit", false);
-            Kraken.transform.DOMoveY(-8, 1f); 
+            Kraken.transform.DOMoveY(-12, 1f); 
     }
 }

@@ -17,11 +17,11 @@ public class BossEnemy : MonoBehaviour
 
         if (KrakenDown())
         {
-            //if (TimeElapsedEvent1())
-            //{
-            //    bossEventManager.TriggerBossEvent1();
-            //    animator.SetBool("krakenScream", false);
-            //}
+            if (TimeElapsedEvent1())
+            {
+                bossEventManager.TriggerBossEvent1();
+                animator.SetBool("krakenScream", false);
+            }
             bossEventManager.KrakenDownEvent();
 
             animator.SetBool("krakenScream", false);
@@ -30,7 +30,17 @@ public class BossEnemy : MonoBehaviour
         else
         {
             bossEventManager.KrakenUpEvent();
-            animator.SetBool("krakenScream", false);
+            if (TimeElapsedEvent2())
+            {
+                bossEventManager.TriggerBossEvent3();
+              
+            }
+
+            if (TimeElapsedEvent3())
+            {
+                bossEventManager.TriggerBossEvent2();
+
+            }
         }
 
        
@@ -76,7 +86,7 @@ public class BossEnemy : MonoBehaviour
         else if (elapsedTimeKrakenDown >= targetTimeKrakenDown)
         {
 
-            if (elapsedTimeKrakenDown >= 40)
+            if (elapsedTimeKrakenDown >= targetTimeKrakenDown * 2)
             {
                 elapsedTimeKrakenDown = 0;
                 return KrakenDown();
@@ -102,7 +112,21 @@ public class BossEnemy : MonoBehaviour
 
         return true;
     }
+    public float elapsedTimeEvent3 = 0f;
+    public float targetTimeEvent3= 0f;
 
+    private bool TimeElapsedEvent3()
+    {
+        elapsedTimeEvent3 += Time.deltaTime;
+
+        if (elapsedTimeEvent3 >= targetTimeEvent3)
+        {
+            elapsedTimeEvent3 = 0f;
+            return true;
+        }
+
+        return false;
+    }
     public float elapsedTimeEvent1 = 0f;
     public float targetTimeEvent1 = 0f;
 
@@ -127,9 +151,10 @@ public class BossEnemy : MonoBehaviour
         if (elapsedTimeEvent2 >= targetTimeEvent2)
         {
             elapsedTimeEvent2 = 0f;
+            animator.SetBool("krakenScream", true);
             return true;
         }
-
+        animator.SetBool("krakenScream", false);
         return false;
     }
 
