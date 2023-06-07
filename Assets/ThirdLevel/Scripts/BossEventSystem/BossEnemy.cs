@@ -21,8 +21,7 @@ public class BossEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Boss düþmanýnýn davranýþýný kontrol et
-        // Belirli koþullar gerçekleþtiðinde ilgili olayý tetikle
+       
 
         if (HealthAboveThreshold()) {
 
