@@ -11,6 +11,7 @@ public class BossEventHandlers : MonoBehaviour
     public KrakenArms krakenArms;
     public DrunkSpawn drunkSpawn;
     public KrakenUpSurFace krakenUpSurFace;
+    public KrakenEnemySpawner krakenEnemySpawner;
     public void HandleBossEvent1()
     {
         krakenArmSlap.BossSekans2Calistir();
@@ -32,5 +33,9 @@ public class BossEventHandlers : MonoBehaviour
     public void KrakenDown()
     {
         krakenUpSurFace.DownSurFace();
+    }
+    public void KrakenEnemySpawner()
+    {
+        krakenEnemySpawner.EnemySpawner();
     }
 }

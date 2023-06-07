@@ -12,7 +12,7 @@ public class BossEnemy : MonoBehaviour
         animator = GetComponent<Animator>();        
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         if (KrakenDown())
@@ -25,7 +25,10 @@ public class BossEnemy : MonoBehaviour
             bossEventManager.KrakenDownEvent();
 
             animator.SetBool("krakenScream", false);
-            //SwapnKontrol
+            if (TimeElapsedEvent4())
+            {
+                bossEventManager.KrakenEnemySpawnerEvent();
+            }
         }
         else
         {
@@ -180,6 +183,21 @@ public class BossEnemy : MonoBehaviour
             return true;
         }
 
+        return false;
+    }
+    public float elapsedTimeEvent4 = 0f;
+    public float targetTimeEvent4 = 0f;
+    private bool TimeElapsedEvent4()
+    {
+        elapsedTimeEvent4 += Time.deltaTime;
+
+        if (elapsedTimeEvent4 >= targetTimeEvent4)
+        {
+            elapsedTimeEvent4 = 0f;
+          
+            return true;
+        }
+      
         return false;
     }
 }
