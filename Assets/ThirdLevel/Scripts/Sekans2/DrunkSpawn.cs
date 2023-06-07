@@ -8,39 +8,18 @@ public class DrunkSpawn : MonoBehaviour
     public GameObject Enemy;
     private Transform target;
     private Animator animator;
-    private KrakenManager manager;
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
+       
         target = GameObject.FindGameObjectWithTag("Ship").transform;
         animator = GetComponent<Animator>();
 
     }
-    //void OnEnable()
-    //{
-    //    manager.BossSekans3Tetiklendi += BossSekans3Calistir;
-
-    //}
-    //void OnDisable()
-    //{
-    //    manager.BossSekans3Tetiklendi -= BossSekans3Calistir;
-
-    //}
 
     void BossSekans3Calistir()
     {
         animator.SetBool("krakenScream", true);
         DrunkEnemySpawn();
-    }
-  
-
-    
-    void Update()
-    {
-
-       
-
-       
     }
 
     private void ChangePosition()

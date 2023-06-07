@@ -6,21 +6,12 @@ public class KrakenArms : MonoBehaviour
 {
     public GameObject arm, rock;
     public Transform[] points;
-
     public float upVeloctiy, Force;
-
     private KrakenArmRock armRock;
-
     private Animator animator;
-    private KrakenManager manager;
 
-    void Start()
-    {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
-    }
     public void BossSekans1Calistir()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<KrakenManager>();
         for (int i = 0; i < points.Length; i++)
         {
 
@@ -48,3 +39,4 @@ public class KrakenArms : MonoBehaviour
         }
     }
 }
+

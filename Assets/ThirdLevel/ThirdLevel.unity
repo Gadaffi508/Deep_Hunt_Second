@@ -453,6 +453,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  krakenup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2013230603}
+        m_TargetAssemblyTypeName: BossEventHandlers, Assembly-CSharp
+        m_MethodName: KrakenUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  krakenDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2013230603}
+        m_TargetAssemblyTypeName: BossEventHandlers, Assembly-CSharp
+        m_MethodName: KrakenDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &293396120
 Transform:
   m_ObjectHideFlags: 0
@@ -1233,7 +1263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -4.12, z: 0}
+  m_LocalPosition: {x: 0.19, y: -3.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1267,7 +1297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 263f938d4619d0948bb3cbef19969e05, type: 3}
   m_Name: 
@@ -1357,7 +1387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4046442986d175244a97913f0468ecd5, type: 3}
   m_Name: 
@@ -1378,9 +1408,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd3c71eaff66cb4db87755c8c7117b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bosseventNum: 1
-  fireRate: 1
-  targetTime: 6
+  elapsedTimeKrakenDown: 0
+  targetTimeKrakenDown: 20
+  elapsedTimeKrakenUp: 0
+  targetTimeKrakenUp: 20
+  elapsedTimeEvent1: 0
+  targetTimeEvent1: 5
+  elapsedTimeEvent2: 9.5
+  targetTimeEvent2: 10
+  health: 100
+  threshold: 30
 --- !u!1 &1104872867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,10 +2114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ef8cc1fd0627c4f854fa882c1fee56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  krakenHealth: 60
+  krakenHealth: 0
   Kraken: {fileID: 1080272414}
-  above: 1
-  aktifSekans: 2
+  above: 0
+  aktifSekans: 1
 --- !u!1 &1644681516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2624,7 @@ MonoBehaviour:
   krakenArmSlap: {fileID: 1080272420}
   krakenArms: {fileID: 1080272416}
   drunkSpawn: {fileID: 1080272417}
+  krakenUpSurFace: {fileID: 1537212673}
 --- !u!4 &2013230604
 Transform:
   m_ObjectHideFlags: 0

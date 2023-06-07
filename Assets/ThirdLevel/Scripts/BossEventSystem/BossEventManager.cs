@@ -6,6 +6,8 @@ public class BossEventManager : MonoBehaviour
     public UnityEvent bossEvent1;
     public UnityEvent bossEvent2;
     public UnityEvent bossEvent3;
+    public UnityEvent krakenup;
+    public UnityEvent krakenDown;
 
     public void TriggerBossEvent1()
     {
@@ -20,5 +22,13 @@ public class BossEventManager : MonoBehaviour
     public void TriggerBossEvent3()
     {
         bossEvent3.Invoke();
+    }
+    public void KrakenUpEvent()
+    {
+        krakenup.Invoke();
+    }
+    public void KrakenDownEvent()
+    {
+        krakenDown.Invoke();
     }
 }
