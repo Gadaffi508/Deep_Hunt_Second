@@ -67,19 +67,11 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     public void DamageHealth(float hasar)
     {
-      
-        health -=hasar;
-       
+        health -=hasar;  
         if (health <= 0)
         {
-            GameManager.Instance.Gold += 15;
+            GameManager.Instance.Gold += 5;
             StartCoroutine(Timer());
-
-
-            Debug.Log("Öldüm");
         }
     }
-
-    
-
 }

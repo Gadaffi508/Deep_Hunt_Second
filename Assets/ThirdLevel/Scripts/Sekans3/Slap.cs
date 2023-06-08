@@ -8,6 +8,8 @@ public class Slap : MonoBehaviour
 
     private Transform ship;
     private Animator animator;
+
+   
     void Start()
     {
         animator = GetComponent<Animator>();

@@ -4292,14 +4292,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789612250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7b44f83e6c15f347b6efb92c5f4c9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waveSend: 1
   timeBetweenWaves: 3
-  howManyWaves: 5
+  howManyWaves: 2
   spawnPointsSwim:
   - {fileID: 764111864}
   - {fileID: 1882392499}
