@@ -140,7 +140,7 @@ MonoBehaviour:
   firingPoint: {fileID: 8077027694083149184}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   enemyMove: {fileID: 8077027693354405018}
   attackRange: 10
   bps: 1

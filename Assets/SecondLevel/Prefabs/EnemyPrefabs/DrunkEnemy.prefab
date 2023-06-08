@@ -143,6 +143,7 @@ MonoBehaviour:
   MoveSpeed: 1.5
   Force: 2100
   blopSea: {fileID: 8300000, guid: 479cdc0fd569b9c458e4d9b097905244, type: 3}
+  kanatSesi: {fileID: 0}
   attack: 0
 --- !u!50 &7985603030482321204
 Rigidbody2D:
@@ -244,7 +245,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

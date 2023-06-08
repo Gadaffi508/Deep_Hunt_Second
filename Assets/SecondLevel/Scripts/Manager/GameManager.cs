@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Goldtext.text = "Gold : " + Gold.ToString();
+        Goldtext.text = Gold.ToString();
     }
 
 

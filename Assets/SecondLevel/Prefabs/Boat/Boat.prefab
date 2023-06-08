@@ -156,7 +156,7 @@ MonoBehaviour:
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
-  gold: 0
+  gold: 1500
   MoveDistance: 1.2
   DistanceSpeed: 2
 --- !u!61 &6064737115687444782
@@ -224,7 +224,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0472505, y: 0.7398845}
+  m_Offset: {x: -1.0026745, y: 1.3356495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -235,7 +235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.78301096, y: 4.7160206}
+  m_Size: {x: 2.1597764, y: 3.5244904}
   m_EdgeRadius: 0
 --- !u!95 &5593027601875991307
 Animator:
