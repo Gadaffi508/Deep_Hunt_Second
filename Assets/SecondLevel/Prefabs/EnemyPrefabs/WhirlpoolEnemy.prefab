@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   effect: {fileID: 1687118924408352, guid: 77c69ec12208c4c4380d15e30b6f8f68, type: 3}
   effect1: {fileID: 1040608886635896, guid: 7668d9af71f10c4478bde4127b941738, type: 3}
   pointEffect: {fileID: 4128455943782372393}

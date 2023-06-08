@@ -4299,7 +4299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveSend: 1
   timeBetweenWaves: 3
-  howManyWaves: 4
+  howManyWaves: 5
   spawnPointsSwim:
   - {fileID: 764111864}
   - {fileID: 1882392499}

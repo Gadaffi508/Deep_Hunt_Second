@@ -11,10 +11,11 @@ public class ArrowBottom : MonoBehaviour
     public float rowSpeed = 5f;
     public int Damage;
     public string Name;
-
+    private EnemyHealtAndAttackScripts enemyHealth;
     public Transform target;
     private void Start()
     {
+       
         Damage = 15;
     }
 
@@ -39,6 +40,8 @@ public class ArrowBottom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Clamb"))
         {
+            enemyHealth = collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>();
+            enemyHealth.DamageHealth(Damage);
             Destroy(gameObject);
         }
     }
@@ -46,6 +49,8 @@ public class ArrowBottom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Clamb"))
         {
+            enemyHealth = collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>();
+            enemyHealth.DamageHealth(Damage);
             Destroy(gameObject);
         }
     }
