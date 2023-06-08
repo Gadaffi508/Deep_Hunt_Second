@@ -30,4 +30,12 @@ public class TryUp : BoatTowerController
             //TowerUpgrade.GetComponent<TowerTopController>().SetTower(tower);
         }
     }
+    public void HealthUpgrade()
+    {
+        tower.HealthUpgrade();
+    }
+    public void DamageDecrease()
+    {
+        tower.DamageDecrease();
+    }
 }

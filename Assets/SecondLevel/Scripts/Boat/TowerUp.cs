@@ -30,8 +30,9 @@ public class TowerUp : BoatTowerController
 
     public GameObject TowerBuilt(GameObject _Tower)
     {
+        Vector2 _ofset = new Vector2(transform.position.x,_Tower.transform.position.y);
         CloseTower();
         Destroy(gameObject);
-        return Instantiate(_Tower, transform.position, Quaternion.identity);
+        return Instantiate(_Tower, _ofset, Quaternion.identity);
     }
 }

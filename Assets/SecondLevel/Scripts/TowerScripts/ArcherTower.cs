@@ -22,6 +22,8 @@ public class ArcherTower : MonoBehaviour
     BoatController boat;
     private AudioSource audio;
     public AudioClip bomb;
+
+    public float FireTÝme = 1.5f;
     private void Start()
     {
         enemyLayer = LayerMask.NameToLayer("Enemy");
@@ -49,7 +51,7 @@ public class ArcherTower : MonoBehaviour
             Transform enemy = nearestEnemy.GetComponent<Transform>();
             Facing(enemy);
 
-            if (nextPrefab >= 1.5f)
+            if (nextPrefab >= FireTÝme)
             {
                 ProjectTileFire(enemy);
                 nextPrefab = 0;
@@ -98,11 +100,11 @@ public class ArcherTower : MonoBehaviour
 
         if (boat.isFacingRight)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(.7f, .7f);
         }
         else
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-.7f, .7f);
         }
     }
     public void UpgradeTowerButton()

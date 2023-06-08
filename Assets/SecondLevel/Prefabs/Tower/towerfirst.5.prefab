@@ -59,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21210942353340201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 3.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.65, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1010647766325053819}
@@ -138,6 +138,7 @@ MonoBehaviour:
   nextPrefab: 0
   bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   bomb: {fileID: 8300000, guid: 14d34704822f1b34ba4d71741576cbec, type: 3}
+  "FireT\u0130me": 1.5
 --- !u!82 &5913802103331613412
 AudioSource:
   m_ObjectHideFlags: 0

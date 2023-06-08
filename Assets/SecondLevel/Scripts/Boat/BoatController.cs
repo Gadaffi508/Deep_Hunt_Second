@@ -74,13 +74,6 @@ public class BoatController : MonoBehaviour
             Flip();
         }
     }
-    IEnumerator DamageSlowTýme()
-    {
-        yield return new WaitForSeconds(2);
-        DamageSlow(damage);
-        StartCoroutine(DamageSlowTýme());
-
-    }
     public void DamageSlow(int damage)
     {
         Health -= damage;

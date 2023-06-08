@@ -34,6 +34,6 @@ public class tower : BoatTowerController
     {
         CloseTower();
         Destroy(gameObject); 
-        return Instantiate(_Tower,transform.position,Quaternion.identity);
+        return Instantiate(_Tower, transform.position, transform.rotation);
     }
 }

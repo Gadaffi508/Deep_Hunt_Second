@@ -16,6 +16,8 @@ public class ArcherTowerBottom : MonoBehaviour
     private AudioSource audio;
     public AudioClip bomb;
     public LayerMask enemyLayer; // Düþmanlarýn bulunduðu katman
+    int facing;
+    int facingLeft = 1;
     bool fire = false;
     private void Start()
     {
@@ -28,16 +30,31 @@ public class ArcherTowerBottom : MonoBehaviour
     private void Update()
     {
         nextPrefab += Time.deltaTime;
-        int facing;
-        if (boat.transform.localScale.x == 1)
+        if (transform.position.x < boat.transform.position.x)
         {
-            facing = -1;
-            transform.localScale = new Vector2(-1, 1);
+            if (boat.transform.localScale.x == 1)
+            {
+                facing = -1;
+                transform.localScale = new Vector2(-.7f, .7f);
+            }
+            else
+            {
+                facing = -1;
+                transform.localScale = new Vector2(.7f, .7f);  
+            }
         }
         else
         {
-            facing = 1;
-            transform.localScale = new Vector2(-1, 1);
+            if (boat.transform.localScale.x == -1)
+            {
+                facing = 1;
+                transform.localScale = new Vector2(-.7f, .7f);
+            }
+            else
+            {
+                facing = 1;
+                transform.localScale = new Vector2(.7f, .7f);
+            }
         }
 
         RaycastHit2D[] hitEnemies = Physics2D.LinecastAll(transform.position, new Vector2(transform.position.x + (10 * facing), transform.position.y), enemyLayer);
@@ -68,13 +85,27 @@ public class ArcherTowerBottom : MonoBehaviour
     public void ProjectTile(Transform enemy)
     {
         GameObject row = Instantiate(Bullet,transform.position,transform.rotation).gameObject;
-        if (boat.transform.localScale.x == 1)
+        if (transform.position.x < boat.transform.position.x)
         {
-            row.GetComponent<Transform>().localScale = new Vector2(-1,1);
+            if (boat.transform.localScale.x == 1)
+            {
+                row.GetComponent<Transform>().localScale = new Vector2(-1, 1);
+            }
+            else
+            {
+                row.GetComponent<Transform>().localScale = new Vector2(-1, 1);
+            }
         }
         else
         {
-            row.GetComponent<Transform>().localScale = new Vector2(1,1);
+            if (boat.transform.localScale.x == -1)
+            {
+                row.GetComponent<Transform>().localScale = new Vector2(1, 1);
+            }
+            else
+            {
+                row.GetComponent<Transform>().localScale = new Vector2(1, 1);
+            }
         }
         ArrowBottom arrow = row.GetComponent<ArrowBottom>();
         arrow.SetTarget(enemy);

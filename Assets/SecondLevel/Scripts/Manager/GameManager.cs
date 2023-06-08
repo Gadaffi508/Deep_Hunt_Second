@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public AudioClip[] DamageSounds;
     public static GameManager Instance;
 
+    public int damagedecrease = 0;
+
     private void Awake()
     {
         audio = GetComponent<AudioSource>();
@@ -42,9 +44,8 @@ public class GameManager : MonoBehaviour
     public void Heal(float healingAmount)
     {
         Health += healingAmount;
-        Health = Mathf.Clamp(healingAmount, 0, 100);
 
-        Healtbar.fillAmount = healingAmount / 100;
+        Healtbar.fillAmount = Health / 100;
     }
 
 
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         int random = Random.Range(0, DamageSounds.Length);
         audio.PlayOneShot(DamageSounds[random]);
-        Health -= damage;
+        Health -= damage - (damagedecrease);
         Healtbar.fillAmount = Health / 100;
     }
 

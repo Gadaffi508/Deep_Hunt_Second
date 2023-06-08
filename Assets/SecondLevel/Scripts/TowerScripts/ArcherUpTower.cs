@@ -17,11 +17,11 @@ public class ArcherUpTower : MonoBehaviour
     {
         if (boat.isFacingRight)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(.5f, .5f);
         }
         else
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-.5f, .5f);
         }
 
     }
@@ -30,5 +30,16 @@ public class ArcherUpTower : MonoBehaviour
         Destroy(gameObject);
         Instantiate(upgradeTower, transform.position, Quaternion.identity);
         GetComponentInChildren<Try>().CloseTower();
+    }
+    public void HealthUpgrade()
+    {
+        if (GameManager.Instance.Health < 80)
+        {
+            GameManager.Instance.Heal(1);
+        }
+    }
+    public void DamageDecrease()
+    {
+        GameManager.Instance.damagedecrease = 5;
     }
 }

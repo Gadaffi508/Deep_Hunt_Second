@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21210942353340201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 3.83, z: 0}
+  m_LocalPosition: {x: 2.65, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1925470595158722696}
   - component: {fileID: 6598605619439820119}
   - component: {fileID: 164474189346412104}
+  - component: {fileID: 3285746243098079141}
   m_Layer: 7
   m_Name: tower
   m_TagString: kuleA
@@ -224,3 +225,23 @@ MonoBehaviour:
     m_Bits: 0
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
+--- !u!95 &3285746243098079141
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6222741901737658172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e98304c01572af47bdec1fd316e3408, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -59,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21210942353340201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: 3.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.65, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1010647766325053819}
@@ -138,6 +138,7 @@ MonoBehaviour:
   nextPrefab: 0
   bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   bomb: {fileID: 8300000, guid: 14d34704822f1b34ba4d71741576cbec, type: 3}
+  "FireT\u0130me": 1.5
 --- !u!82 &5913802103331613412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -404,7 +405,6 @@ GameObject:
   m_Component:
   - component: {fileID: 334545383324115090}
   - component: {fileID: 3194676308189702732}
-  - component: {fileID: 4410381386383959202}
   m_Layer: 0
   m_Name: "Kuleler1\xDCst"
   m_TagString: Untagged
@@ -479,26 +479,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4410381386383959202
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7085306389998754210}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 75193295b8695a646ad5c84958e50226, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7721324731847247419
 GameObject:
   m_ObjectHideFlags: 0
