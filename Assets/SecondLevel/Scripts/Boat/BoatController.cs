@@ -38,9 +38,10 @@ public class BoatController : MonoBehaviour
 
     private bool Move = true;
 
-
+    private Animator animator;
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         GameManager.Instance.Health = Health;
@@ -50,7 +51,9 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("speed",Mathf.Abs(horizontal));
+
         if (horizontal != 0)
         {
             rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);

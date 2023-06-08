@@ -36,23 +36,13 @@ public class SpawnController : MonoBehaviour
     {
         if (waveSend)
         {
-            for (int i = 0; i < howManyWaves; i++)
+            random = Random.Range(0,spawnPointsSwim.Length);
+            yield return new WaitForSeconds(2f);
+            Instantiate(enemySwim, spawnPointsSwim[random].position, Quaternion.identity);
+            for (int i = 0; i < littleSwim; i++)
             {
-                for (int a = 0; a < littleSwim; a++)
-                {
-                    random = Random.Range(0,spawnPointsSwim.Length);
-                    Instantiate(enemyLittleSwim, spawnPointsSwim[random].position,Quaternion.identity);
-                    yield return new WaitForSeconds(2f);
-                }
-
+                Instantiate(enemyLittleSwim, spawnPointsSwim[random].position, Quaternion.identity);
                 yield return new WaitForSeconds(2f);
-
-                for (int a = 0; a < swimEnemy; a++)
-                {
-                    random = Random.Range(0, spawnPointsSwim.Length);
-                    Instantiate(enemySwim, spawnPointsSwim[random].position, Quaternion.identity);
-                    yield return new WaitForSeconds(2f);
-                }
             }
            
         }

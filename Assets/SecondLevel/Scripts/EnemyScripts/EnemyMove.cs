@@ -36,24 +36,27 @@ public class EnemyMove : MonoBehaviour
     }
     void Start()
     {
+       
         animator.SetBool("touched", false);
        
         prevMoveSpeed = moveSpeed;
         if (transform.position.x > target.position.x)
         {
             moveSpeed *= -1;
-            duration = moveSpeed;
-            transform.localScale = new Vector3(1,1,1f);
+            prevMoveSpeed *= -1;
+            transform.localScale = new Vector3(1, 1, 1f);
         }
-        else
+        if (transform.position.x < target.position.x)
         {
             moveSpeed *= 1;
-            duration = moveSpeed;
+            prevMoveSpeed *= 1;
             transform.localScale = new Vector3(-1, 1, 1f);
         }
+
     }
     private void Update()
     {
+
         Physics2D.queriesStartInColliders = true;
 
         if (isFrozen)
@@ -75,22 +78,22 @@ public class EnemyMove : MonoBehaviour
         rb.velocity = new Vector2(moveSpeed * Time.deltaTime,rb.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (collision.gameObject.CompareTag("Arrow"))
         {
             animator.SetBool("damage", true);
             Instantiate(Effect, effectPoint.position, Quaternion.identity);
-           
-        }
 
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
             animator.SetBool("touched", true);
+            moveSpeed = 0;
         }
 
     }
@@ -100,20 +103,10 @@ public class EnemyMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ship"))
         {
             animator.SetBool("touched", false);
+            moveSpeed = prevMoveSpeed;
         }
-       
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Arrow"))
-        {
-            animator.SetBool("damage", true);
-            Instantiate(Effect, effectPoint.position, Quaternion.identity);
-        }
-       
-    }
-
+  
     public void Freeze(float duration)
     {
         if (!isFrozen)
