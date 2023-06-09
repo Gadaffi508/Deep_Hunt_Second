@@ -12,7 +12,7 @@ public class BossEventManager : MonoBehaviour
 
     public void TriggerBossEvent1()
     {
-        bossEvent1.Invoke();
+        bossEvent1.Invoke();    
     }
 
     public void TriggerBossEvent2()

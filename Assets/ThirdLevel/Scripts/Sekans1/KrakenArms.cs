@@ -26,17 +26,17 @@ public class KrakenArms : MonoBehaviour
             GameObject arms = Instantiate(arm, points[i].position, Quaternion.identity);
             animator = GameObject.FindGameObjectWithTag("krakenArm").GetComponent<Animator>();
 
-            arms.transform.DOMoveY(-4.5f, 1f).OnComplete(() =>
+            arms.transform.DOMoveY(-6.5f, 1f).OnComplete(() =>
             {
 
-                arms.transform.DOMoveY(-4.5f, 2f).OnComplete(() =>
+                arms.transform.DOMoveY(-6.5f, 2f).OnComplete(() =>
                 {
                     animator.SetBool("Exit", true);
-                    arms.transform.DOMoveY(-4.5f, 2f).OnComplete(() =>
+                    arms.transform.DOMoveY(-6.5f, 2f).OnComplete(() =>
                     {
                         animator.SetBool("Exit", false);
                         animator.SetBool("input", true);
-                        arms.transform.DOMoveY(-7, 1f).OnComplete(() =>
+                        arms.transform.DOMoveY(-12, 1f).OnComplete(() =>
                         {
                             animator.SetBool("input", false);
                             Destroy(arms);

@@ -8,7 +8,7 @@ public class ArcherTowerBottom : MonoBehaviour
     [Header("Upgrade Tower")]
     [SerializeField] GameObject upgradeTower;
     [Space]
-    private Transform effectPos;
+    public Transform effectPos;
     public ArrowBottom Bullet;
     public float nextPrefab;
     public GameObject bombEffect;
@@ -16,6 +16,9 @@ public class ArcherTowerBottom : MonoBehaviour
     private AudioSource audio;
     public AudioClip bomb;
     public LayerMask enemyLayer; // Düþmanlarýn bulunduðu katman
+
+    public float xScale;
+    public float yScale;
     int facing;
     int facingLeft = 1;
     bool fire = false;
@@ -24,7 +27,7 @@ public class ArcherTowerBottom : MonoBehaviour
     {
         boat = GameObject.FindGameObjectWithTag("Ship").gameObject.GetComponent<BoatController>();
         audio = GetComponent<AudioSource>();
-        effectPos = GetComponentInChildren<Transform>();
+        
     }
 
 
@@ -90,22 +93,22 @@ public class ArcherTowerBottom : MonoBehaviour
         {
             if (boat.transform.localScale.x == 1)
             {
-                row.GetComponent<Transform>().localScale = new Vector2(-1, 1);
+                row.GetComponent<Transform>().localScale = new Vector2(-xScale, yScale);
             }
             else
             {
-                row.GetComponent<Transform>().localScale = new Vector2(-1, 1);
+                row.GetComponent<Transform>().localScale = new Vector2(-xScale, yScale);
             }
         }
         else
         {
             if (boat.transform.localScale.x == -1)
             {
-                row.GetComponent<Transform>().localScale = new Vector2(1, 1);
+                row.GetComponent<Transform>().localScale = new Vector2(xScale, yScale);
             }
             else
             {
-                row.GetComponent<Transform>().localScale = new Vector2(1, 1);
+                row.GetComponent<Transform>().localScale = new Vector2(xScale, yScale);
             }
         }
         ArrowBottom arrow = row.GetComponent<ArrowBottom>();

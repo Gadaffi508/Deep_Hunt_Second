@@ -19,4 +19,6 @@ public class Arrowproperty : ArrowScripts
         collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().hasarVeriliyor = true;
         collision.gameObject.GetComponent<EnemyHealtAndAttackScripts>().hasarSure = 5;
     }
+
+  
 }
