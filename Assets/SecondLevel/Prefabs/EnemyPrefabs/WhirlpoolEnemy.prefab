@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c327dd80d724ae41bb8ab5ad2295f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 60
   attack: 0
   puffEffect: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
   effectPoint1: {fileID: 2185200214567213556}

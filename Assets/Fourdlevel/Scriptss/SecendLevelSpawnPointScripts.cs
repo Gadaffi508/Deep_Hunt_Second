@@ -13,22 +13,18 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
 
 
     private Vector2 SeaPoint;
-
-
-
-
-
-
+    private Vector2 FlyPoint;
+    private Vector2 DeepPoint;
     private Transform target;
 
     private void Start()
     {
-        SpawnerTimer();
+        SpawnerTwo();
     }
 
     private void SpawnerTwo()
     {
-        StartCoroutine("SpawnerTimer");
+        StartCoroutine(SpawnerTimer());
     }
 
 
@@ -38,26 +34,400 @@ public class SecendLevelSpawnPointScripts : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            if (random2 == 0)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x + 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            else if (random2 == 1)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x - 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
             if (random1 == 0)
             {
                 target = GameObject.FindGameObjectWithTag("Ship").transform;
-                SeaPoint = new Vector2(target.position.x + 10f,-4f);
-                Instantiate(tankEnemy,SeaPoint,Quaternion.identity);
+                SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
             }
             else if (random1 == 1)
             {
                 target = GameObject.FindGameObjectWithTag("Ship").transform;
-                SeaPoint = new Vector2(target.position.x - 10f, -4f);
+                SeaPoint = new Vector2(target.position.x - 20f, -6.4f);
                 Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
             }
             for (int a = 0; a < 3; a++)
             {
                 Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
                 yield return new WaitForSeconds(2);
+                Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1);
             }
         }
         yield return new WaitForSeconds(12);
         //Wave 2
-    }
+        for (int i = 0; i < 10; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            if (random2 == 0)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x + 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            else if (random2 == 1)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x - 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            if (random1 == 0)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            else if (random1 == 1)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                SeaPoint = new Vector2(target.position.x - 20f, -6.4f);
+                Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            for (int a = 0; a < 3; a++)
+            {
+                Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(2);
+                Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1);
+            }
+        }
+        yield return new WaitForSeconds(12);
+        //Wave3
+        for (int i = 0; i < 10; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            int number = 0;
 
+            if (number < 6)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                DeepPoint = new Vector2(Random.Range(transform.position.x - 10, transform.position.x + 11), -15f);
+                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                number++;
+            }
+
+            if (random2 == 0)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x + 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            else if (random2 == 1)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                FlyPoint = new Vector2(target.position.x - 20f, 0);
+                Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            if (random1 == 0)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            else if (random1 == 1)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                SeaPoint = new Vector2(target.position.x - 20f, -6.4f);
+                Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+            }
+            for (int a = 0; a < 3; a++)
+            {
+                Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                yield return new WaitForSeconds(2);
+                Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                yield return new WaitForSeconds(1);
+            }
+        }
+        yield return new WaitForSeconds(12);
+        //Wave 4
+        for (int i = 0; i < 12; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            int number = 0;
+
+            if (number < 12)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                DeepPoint = new Vector2(Random.Range(transform.position.x - 10, transform.position.x + 11), -15f);
+                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                number++;
+            }
+            if (i < 10)
+            {
+                if (random2 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x + 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                else if (random2 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x - 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (random1 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                else if (random1 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x - 20f, -6.4f);
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                for (int a = 0; a < 4; a++)
+                {
+                    Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(2);
+
+                    if (a < 3)
+                    {
+                        Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(1);
+                    }
+                }
+            }
+        }
+        yield return new WaitForSeconds(12);
+        //Wave 5  
+        for (int i = 0; i < 12; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            int number = 0;
+
+            if (number < 12)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                DeepPoint = new Vector2(Random.Range(transform.position.x - 10, transform.position.x + 11), -15f);
+                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                number++;
+            }
+            if (i < 10)
+            {
+                if (random2 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x + 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                else if (random2 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x - 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (random1 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 1)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+
+                }
+                else if (random1 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 1)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                for (int a = 0; a < 4; a++)
+                {
+                    Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(2);
+
+                    if (a < 3)
+                    {
+                        Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(1);
+                    }
+                }
+            }
+        }
+        yield return new WaitForSeconds(5);
+        for (int i = 0; i < 12; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            int number = 0;
+
+            if (number < 12)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                DeepPoint = new Vector2(Random.Range(transform.position.x - 10, transform.position.x + 11), -15f);
+                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                number++;
+            }
+            if (i < 10)
+            {
+                if (random2 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x + 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                else if (random2 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x - 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (random1 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 1)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+
+                }
+                else if (random1 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 1)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                for (int a = 0; a < 4; a++)
+                {
+                    Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(2);
+
+                    if (a < 3)
+                    {
+                        Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(1);
+                    }
+                }
+            }
+        }
+        yield return new WaitForSeconds(12);
+        //Wave6
+        for (int i = 0; i < 12; i++)
+        {
+            int random1 = Random.Range(0, 2);
+            int random2 = Random.Range(0, 2);
+            int number = 0;
+
+            if (number < 12)
+            {
+                target = GameObject.FindGameObjectWithTag("Ship").transform;
+                DeepPoint = new Vector2(Random.Range(transform.position.x - 10, transform.position.x + 11), -15f);
+                Instantiate(clambEnemy, DeepPoint, Quaternion.identity);
+                number++;
+            }
+            if (i < 10)
+            {
+                if (random2 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x + 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                else if (random2 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    FlyPoint = new Vector2(target.position.x - 20f, 0);
+                    Instantiate(DrunkEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (random1 == 0)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 4)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+
+                }
+                else if (random1 == 1)
+                {
+                    target = GameObject.FindGameObjectWithTag("Ship").transform;
+                    SeaPoint = new Vector2(target.position.x + 20f, -6.4f);
+                    if (number < 4)
+                    {
+                        Instantiate(GirdapEnemy, SeaPoint, Quaternion.identity);
+                        yield return new WaitForSeconds(4f);
+                    }
+                    Instantiate(tankEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1f);
+                }
+                for (int a = 0; a < 2; a++)
+                {
+                    Instantiate(SmallEnemy, SeaPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(2);
+                    Instantiate(FlyEnemy, FlyPoint, Quaternion.identity);
+                    yield return new WaitForSeconds(1);
+
+                }
+            }
+        }
+    }
 }

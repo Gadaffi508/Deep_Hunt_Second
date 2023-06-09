@@ -142,7 +142,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8704
   enemyMove: {fileID: 8077027693354405018}
-  attackRange: 10
+  attackRange: 7.5
   bps: 1
 --- !u!114 &8077027693354405018
 MonoBehaviour:
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  attack: 10
+  attack: 1
   puffEffect: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
   effectPoint1: {fileID: 5413554042891079883}
   hasarSure: 5
