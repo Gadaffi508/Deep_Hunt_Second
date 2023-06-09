@@ -38,13 +38,13 @@ public class FlyEnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            GameManager.Instance.TakeDamage(attack);
+            GameManager.Instance.TakeDamage(damage);
             Destroy(gameObject);
 
         }
         if (collision.gameObject.CompareTag("kuleA"))
         {
-            GameManager.Instance.TakeDamage(attack);
+            GameManager.Instance.TakeDamage(damage);
             Destroy(gameObject);    
 
         }

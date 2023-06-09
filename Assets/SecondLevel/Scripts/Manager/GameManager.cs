@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -25,7 +26,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         audio = GetComponent<AudioSource>();
+
+        if (Instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         Instance = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
     IEnumerator Start()
@@ -33,6 +41,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
+
+
     }
 
     private void FixedUpdate()
@@ -55,6 +65,11 @@ public class GameManager : MonoBehaviour
         audio.PlayOneShot(DamageSounds[random]);
         Health -= damage - (damagedecrease);
         Healtbar.fillAmount = Health / 100;
+    }
+
+    public void nextScene(int scene›D)
+    {
+        SceneManager.LoadScene(scene›D);
     }
 
 

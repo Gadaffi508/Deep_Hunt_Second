@@ -34,11 +34,10 @@ public class BoatController : MonoBehaviour
 
     private Vector3 StartPos; // Geminin baþlangýç konumu
 
-    private bool stoped;
-
     private bool Move = true;
 
     private Animator animator;
+    public static BoatController boatInstance;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -49,20 +48,26 @@ public class BoatController : MonoBehaviour
         Health = 100;
     }
 
+    private void Start()
+    {
+        if (boatInstance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        boatInstance = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
+
     void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("speed",Mathf.Abs(horizontal));
+        animator.SetFloat("speed", Mathf.Abs(horizontal));
 
         if (horizontal != 0)
         {
             rb.velocity = new Vector2(horizontal * speed * Time.deltaTime, rb.velocity.y);
             StartPos = transform.position;
-            stoped = false;
-        }
-        else
-        {
-            stoped = true;
         }
 
         if (horizontal > 0 && !isFacingRight)
@@ -125,7 +130,7 @@ public class BoatController : MonoBehaviour
         }
         if (StartPos.x + MoveDistance < transform.position.x || StartPos.x - MoveDistance > transform.position.x)
         {
-            Move =! Move;
+            Move = !Move;
         }
     }
 

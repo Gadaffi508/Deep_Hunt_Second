@@ -144,7 +144,7 @@ MonoBehaviour:
   Force: 2100
   blopSea: {fileID: 8300000, guid: 479cdc0fd569b9c458e4d9b097905244, type: 3}
   kanatSesi: {fileID: 0}
-  attack: 0
+  attack: 10
 --- !u!50 &7985603030482321204
 Rigidbody2D:
   serializedVersion: 4
