@@ -22,7 +22,7 @@ public class DamageAndSlowHealth : MonoBehaviour
         }
 
         nextPrefab += Time.deltaTime;
-        if (nextPrefab >= 1.5f)
+        if (nextPrefab >= .5f)
         {
             StartCoroutine(Attack());
             nextPrefab = 0;

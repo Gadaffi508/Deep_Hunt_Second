@@ -15,10 +15,21 @@ public class CameraMain : MonoBehaviour
     private float titremeSiddeti = 0.1f;
     private float titremeSure = 1f;
 
-   
-   
+
+    public static CameraMain Cam›nstance;
 
     public GameObject Fog;
+
+    private void Awake()
+    {
+        if (Cam›nstance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Cam›nstance = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
 
     private IEnumerator Start()
     {

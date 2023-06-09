@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1651184287069470925}
   - component: {fileID: 1651184287069470924}
   m_Layer: 0
-  m_Name: BottomBullet
+  m_Name: BottomBulletsecond
   m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1807974117, guid: 6a5ef82c69447f34f902ecb21af97a35, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b7490e6104a4b7f40aa9b248ac27dfaa, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,6 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1651184287069470925}
   rowSpeed: 10
-  Damage: 75
+  Damage: 10
   Name: 
   target: {fileID: 0}

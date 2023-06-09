@@ -19,6 +19,7 @@ public class ArcherTowerBottom : MonoBehaviour
     int facing;
     int facingLeft = 1;
     bool fire = false;
+    public float attackSpeed;
     private void Start()
     {
         boat = GameObject.FindGameObjectWithTag("Ship").gameObject.GetComponent<BoatController>();
@@ -66,7 +67,7 @@ public class ArcherTowerBottom : MonoBehaviour
             if (enemy != null)
             {
                 fire = true;
-                if (nextPrefab >= 1.5f && fire)
+                if (nextPrefab >= attackSpeed && fire)
                 {
                     ProjectTile(enemy.transform);
                     nextPrefab = 0;
