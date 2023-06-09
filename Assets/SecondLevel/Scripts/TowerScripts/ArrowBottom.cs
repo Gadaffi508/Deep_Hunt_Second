@@ -9,7 +9,7 @@ public class ArrowBottom : MonoBehaviour
 
     [Header("Attributes")]
     public float rowSpeed = 5f;
-    public int Damage;
+    public float Damage;
     public string Name;
     private EnemyHealtAndAttackScripts enemyHealth;
     public Transform target;

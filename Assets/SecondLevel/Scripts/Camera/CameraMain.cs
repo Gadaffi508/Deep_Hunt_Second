@@ -52,14 +52,6 @@ public class CameraMain : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            BaslatTitreme();
-        }
-    }
-
     void BaslatTitreme()
     {
         if (!titremeDevamEdiyor)

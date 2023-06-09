@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         int random = Random.Range(0, DamageSounds.Length);
         audio.PlayOneShot(DamageSounds[random]);
-        Health -= damage - (damagedecrease);
+        Health -= Mathf.Abs((damage - damagedecrease)); // health = health - damage - (damagedecrease)
         Healtbar.fillAmount = Health / 100;
     }
 

@@ -22,6 +22,7 @@ public class ArcherTower : MonoBehaviour
     BoatController boat;
     private AudioSource audio;
     public AudioClip bomb;
+    public int damage;
 
     public float FireTÝme = 1.5f;
     private void Start()
@@ -72,6 +73,7 @@ public class ArcherTower : MonoBehaviour
     {
         GameObject row = Bullet.InstateBullet(FirePos, BulletRotate);
         ArrowScripts arrowScripts = row.GetComponent<ArrowScripts>();
+        arrowScripts.Damage = damage;
         arrowScripts.SetTarget(target);
 
     }

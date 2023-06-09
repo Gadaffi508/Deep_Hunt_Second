@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5d9536cd7e0a943b6898eec77ba87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeTower: {fileID: 21210942353340201, guid: 7c555047a124dd9428a516b44a15f219, type: 3}
+  upgradeTower: {fileID: 0}
   OverlapRadius: 7.3
   nearestEnemy: {fileID: 0}
   rotateFire: {fileID: 621758480841080324}
@@ -138,7 +138,8 @@ MonoBehaviour:
   nextPrefab: 0
   bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   bomb: {fileID: 8300000, guid: 14d34704822f1b34ba4d71741576cbec, type: 3}
-  "FireT\u0130me": 1.5
+  damage: 35
+  "FireT\u0130me": 0.75
 --- !u!82 &5913802103331613412
 AudioSource:
   m_ObjectHideFlags: 0

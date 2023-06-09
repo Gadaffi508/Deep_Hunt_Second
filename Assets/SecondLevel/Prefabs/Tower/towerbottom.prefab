@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80c5b6d5ee3ef4439093fd874488ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeTower: {fileID: 21210942353340201, guid: 7c555047a124dd9428a516b44a15f219, type: 3}
+  upgradeTower: {fileID: 0}
   effectPos: {fileID: 7959354336718767629}
   Bullet: {fileID: 1651184287069470924, guid: 1f4337f61e3ac394a9c90853fd59f424, type: 3}
   nextPrefab: 0
@@ -231,7 +231,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackSpeed: 6.5
+  xScale: 0
+  yScale: 0
+  attackSpeed: 3.25
 --- !u!1 &5084475658254553820
 GameObject:
   m_ObjectHideFlags: 0

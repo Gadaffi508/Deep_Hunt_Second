@@ -33,7 +33,7 @@ public class ArcherUpTower : MonoBehaviour
     }
     public void HealthUpgrade()
     {
-        if (GameManager.Instance.Health <= 100)
+        if (GameManager.Instance.Health < 100)
         {
             GameManager.Instance.Heal(5f);
         }

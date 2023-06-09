@@ -1,0 +1,58 @@
+using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraTutorial : MonoBehaviour
+{
+    public GameObject Fog;
+    Transform targetPos;
+    public float speed = 2.0f;
+    public Vector3 delayAmount;
+    private Vector3 targetVector;
+
+
+    public static CameraTutorial CamÝnstanceTut;
+
+    private void Awake()
+    {
+        if (CamÝnstanceTut != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        CamÝnstanceTut = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(.5f);
+        Fog.transform.DOMoveY(20, 1);
+        
+    }
+
+    public void FollowShip()
+    {
+        StartCoroutine(loadFollow());
+    }
+
+    IEnumerator loadFollow()
+    {
+        yield return new WaitForSeconds(1);
+        targetPos = GameObject.FindGameObjectWithTag("Ship").transform;
+        // Karakter ile kamera arasýndaki baþlangýç mesafesini belirlemek için kullanýlýr.
+        delayAmount = transform.position - targetPos.position;
+    }
+
+    void LateUpdate()
+    {
+        if (targetPos != null)
+            targetVector = targetPos.position + delayAmount;
+
+        Vector3 yumusatilmisPozisyon = Vector3.Lerp(transform.position, targetVector, speed * Time.deltaTime);
+
+        transform.position = new Vector3(yumusatilmisPozisyon.x, transform.position.y, transform.position.z);
+
+    }
+}
