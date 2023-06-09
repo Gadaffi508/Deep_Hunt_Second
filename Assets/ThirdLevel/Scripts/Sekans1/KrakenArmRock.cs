@@ -8,6 +8,7 @@ public class KrakenArmRock : MonoBehaviour
     private Transform target;
     public Transform rockPoint;
     public float Force,force;
+    public float attack;
 
     void Start()
     {
@@ -22,12 +23,12 @@ public class KrakenArmRock : MonoBehaviour
         if (transform.position.x > target.position.x)
         {
             force *= -1;
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(2,3,1);
         }
         else if (transform.position.x < target.position.x)
         {
             force *= 1;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 3, 1);
         }
     }
     public void AttackOne()
@@ -37,6 +38,6 @@ public class KrakenArmRock : MonoBehaviour
         rockIns.GetComponent<Rigidbody2D>().AddForce(Vector2.left * -force);
         Destroy(rockIns, 3f);
     }
+  
 
- 
 }

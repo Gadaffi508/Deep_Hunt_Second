@@ -136,6 +136,7 @@ MonoBehaviour:
   rockPoint: {fileID: 491251560205921743}
   Force: 780
   force: 350
+  attack: 30
 --- !u!61 &929744880347581549
 BoxCollider2D:
   m_ObjectHideFlags: 0

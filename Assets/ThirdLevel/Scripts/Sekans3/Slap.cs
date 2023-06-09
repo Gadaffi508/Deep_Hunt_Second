@@ -16,7 +16,7 @@ public class Slap : MonoBehaviour
         ship = GameObject.FindGameObjectWithTag("Ship").transform;
         if (transform.position.x < ship.position.x)
         {
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-2,3,1);
         }
         transform.DOMoveY(-5.7f, 1f).OnComplete(() =>
         {
