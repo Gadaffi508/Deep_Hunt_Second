@@ -202,7 +202,7 @@ MonoBehaviour:
     m_Bits: 256
   xScale: 0.5
   yScale: 0.5
-  attackSpeed: 0.5
+  attackSpeed: 0.9
 --- !u!1 &6222741901737658172
 GameObject:
   m_ObjectHideFlags: 0

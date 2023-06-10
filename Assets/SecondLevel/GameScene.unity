@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Goldtext: {fileID: 498671910}
   HealthText: {fileID: 0}
-  Gold: 100
+  Gold: 35
   Health: 100
   Healtbar: {fileID: 1453007918}
   HealtbarBG: {fileID: 2038767945}

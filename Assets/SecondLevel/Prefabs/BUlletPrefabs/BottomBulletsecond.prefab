@@ -138,6 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1651184287069470925}
   rowSpeed: 10
-  Damage: 7.5
+  Damage: 3
   Name: 
   target: {fileID: 0}

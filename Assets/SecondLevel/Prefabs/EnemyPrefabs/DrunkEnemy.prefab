@@ -144,7 +144,7 @@ MonoBehaviour:
   Force: 2100
   blopSea: {fileID: 8300000, guid: 479cdc0fd569b9c458e4d9b097905244, type: 3}
   kanatSesi: {fileID: 0}
-  attack: 10
+  attack: 30
 --- !u!50 &7985603030482321204
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
-  attack: 40
+  attack: 20
   puffEffect: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
   effectPoint1: {fileID: 6267013021351408896}
   hasarSure: 5

@@ -35,11 +35,11 @@ public class ArcherUpTower : MonoBehaviour
     {
         if (GameManager.Instance.Health < 100)
         {
-            GameManager.Instance.Heal(5f);
+            GameManager.Instance.Heal(0.25f);
         }
     }
     public void DamageDecrease()
     {
-        GameManager.Instance.damagedecrease = 10;
+        GameManager.Instance.damagedecrease = 5;
     }
 }

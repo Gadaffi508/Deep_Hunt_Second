@@ -70,7 +70,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
         health -=hasar;  
         if (health <= 0)
         {
-            GameManager.Instance.Gold += 5;
+            GameManager.Instance.Gold += 3;
             StartCoroutine(Timer());
         }
     }

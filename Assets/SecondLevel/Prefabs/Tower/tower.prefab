@@ -139,7 +139,7 @@ MonoBehaviour:
   bombEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   bomb: {fileID: 8300000, guid: 14d34704822f1b34ba4d71741576cbec, type: 3}
   damage: 35
-  "FireT\u0130me": 0.75
+  "FireT\u0130me": 1.2
 --- !u!82 &5913802103331613412
 AudioSource:
   m_ObjectHideFlags: 0

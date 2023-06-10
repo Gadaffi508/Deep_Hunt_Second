@@ -152,11 +152,11 @@ MonoBehaviour:
   speed: 150
   direction: 1
   isFacingRight: 1
-  Health: 100
+  Health: 200
   damage: 15
   healthText: {fileID: 0}
   GoldText: {fileID: 0}
-  gold: 1500
+  gold: 150
   MoveDistance: 1.2
   DistanceSpeed: 2
 --- !u!61 &6064737115687444782
