@@ -32,6 +32,7 @@ TagManager:
   - Kraken
   - Panelfour
   - PanelFive
+  - Level
   layers:
   - Default
   - TransparentFX

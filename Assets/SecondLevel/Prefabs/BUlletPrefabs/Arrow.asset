@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f952ddd4845058e42af1664e6d4eb9e7, type: 3}
-  m_Name: Arrow5
+  m_Name: Arrow
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8268947992135232424, guid: 75006db0d7acf5a4582b51197f4bf119, type: 3}
-  spt: {fileID: -5406419669466288976, guid: 75006db0d7acf5a4582b51197f4bf119, type: 3}
-  bulletCurrent: {fileID: 2665478812183213191, guid: bbab0ab6987b76e4dbb2e5b2624849c5, type: 3}
+  bullet: {fileID: 8268947992135232424, guid: 3e7a6f1e68ebfc04b8e7cb87ec7aa5e0, type: 3}
+  spt: {fileID: 3038962198651966914, guid: 3e7a6f1e68ebfc04b8e7cb87ec7aa5e0, type: 3}
+  bulletCurrent: {fileID: -6963794794853646877, guid: 3e7a6f1e68ebfc04b8e7cb87ec7aa5e0, type: 3}

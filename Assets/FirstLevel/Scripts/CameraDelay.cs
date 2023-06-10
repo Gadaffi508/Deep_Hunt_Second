@@ -19,13 +19,18 @@ public class CameraDelay : MonoBehaviour
         instance = this;
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        for (int i = level; i < targetAll.Length; i++)
+        StartCoroutine(StartScene());
+    }
+
+    public IEnumerator StartScene()
+    {
+        for (int i = level + 1; i < targetAll.Length; i++)
         {
             targetAll[i].SetActive(false);
+            targetAll[level].SetActive(true);
         }
-        targetAll[level].SetActive(true);
 
         if(level > 1)
             targetPos = targetAll[level-1].transform;

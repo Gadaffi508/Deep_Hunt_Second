@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealtAndAttackScripts : MonoBehaviour
 {
     [Header("Healt")]
-    [SerializeField] private float health;
+    [SerializeField] public float health;
     [Header("Attack")]
     [SerializeField] public int attack;
 
@@ -67,7 +68,7 @@ public class EnemyHealtAndAttackScripts : MonoBehaviour
 
     public void DamageHealth(float hasar)
     {
-        health -=hasar;  
+        health -=hasar;
         if (health <= 0)
         {
             GameManager.Instance.Gold += 3;

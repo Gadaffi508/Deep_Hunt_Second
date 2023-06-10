@@ -34,7 +34,7 @@ public class ClambEnemy : MonoBehaviour
     {
         //Set Damage
         animator.SetBool("isCollision",true);
-        GameManager.Instance.TakeDamage(damage);
+        StartCoroutine(DamageShip());
 
         //SetParent
         transform.SetParent(boat.gameObject.transform);
@@ -54,5 +54,13 @@ public class ClambEnemy : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator DamageShip()
+    {
+        yield return new WaitForSeconds(0.75f);
+        damage += 2;
+        GameManager.Instance.TakeDamage(damage);
+        StartCoroutine(DamageShip());
     }
 }

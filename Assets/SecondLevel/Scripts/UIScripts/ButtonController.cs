@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ public class ButtonController : MonoBehaviour
     public Text GunDamage;
     public Text GunName;
 
+    public GameObject[] Ubg;
+
     [SerializeField] TopSelectButton[] allButtons;
 
     private ArcherTower currentTower;
@@ -22,7 +25,6 @@ public class ButtonController : MonoBehaviour
     {
         foreach(var button in allButtons)
         {
-            button.OnButtonEnter += ButtonEnter;
             button.OnButtonClick += ButtonClick;
         }
     }
@@ -30,23 +32,18 @@ public class ButtonController : MonoBehaviour
     {
         foreach (var button in allButtons)
         {
-            button.OnButtonEnter -= ButtonEnter;
             button.OnButtonClick -= ButtonClick;
         }
-    }
-
-    //Event Methods
-    private void ButtonEnter(BulletScriptable bullet)
-    {
-        GunSpeed.text = "Gun Speed : " + bullet.bulletCurrent.rowSpeed.ToString();
-        GunDamage.text = "Gun Damage : " + bullet.bulletCurrent.Damage.ToString();
-        GunName.text = "Gun Name : " + bullet.bulletCurrent.Name;
     }
     private void ButtonClick(BulletScriptable bullet)
     {
         if(currentTower != null)
         {
            currentTower.Bullet = bullet;
+        }
+        for (int i = 0; i < Ubg.Length; i++)
+        {
+            Ubg[i].transform.DOMoveY(1500, 1);
         }
     }
 }

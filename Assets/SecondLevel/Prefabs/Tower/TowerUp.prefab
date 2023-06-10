@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenTowerObject:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
 --- !u!95 &8267323366379638213

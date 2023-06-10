@@ -16,15 +16,21 @@ public class TowerUp : BoatTowerController
         {
             TowerPanel.transform.DOMoveY(1500, 1);
             TowerPanel.GetComponent<TowerTopController>().SetTower(null);
+            GameManager.Instance.clickb = true;
+            GameManager.Instance.clickc = true;
+            GameManager.Instance.clickd = true;
         }
     }
 
     public override void TowerBuilt()
     {
-        if (TowerPanel != null)
+        if (TowerPanel != null && GameManager.Instance.clicka == true)
         {
             TowerPanel.transform.DOMoveY(950, 1);
             TowerPanel.GetComponent<TowerTopController>().SetTower(this);
+            GameManager.Instance.clickb = false;
+            GameManager.Instance.clickc = false;
+            GameManager.Instance.clickd = false;
         }
     }
 

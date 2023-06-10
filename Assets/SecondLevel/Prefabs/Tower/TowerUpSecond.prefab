@@ -222,9 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenTowerObject:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
+  upgrade: 0
 --- !u!95 &3285746243098079141
 Animator:
   serializedVersion: 4

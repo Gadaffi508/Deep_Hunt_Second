@@ -24,7 +24,10 @@ public abstract class BoatTowerController : MonoBehaviour
             if (hit.collider != null)
             {
                 CloseTower();
-                hit.collider.GetComponent<BoatTowerController>().TowerBuilt();
+                if (hit.collider.GetComponent<BoatTowerController>() != null)
+                {
+                    hit.collider.GetComponent<BoatTowerController>().TowerBuilt();
+                }
             }
         }
         if (Input.GetMouseButtonDown(1))

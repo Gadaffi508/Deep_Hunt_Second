@@ -57,6 +57,9 @@ public class LoadGame : MonoBehaviour
     {
         Camera.GetComponent<CameraDelay>().FogOut();
         yield return new WaitForSeconds(1);
+        LevelManager.instanceLevel.LoadBoat();
         SceneManager.LoadScene(sceneID);
+        yield return new WaitForSeconds(1);
+        LevelManager.instanceLevel.DelayCam();
     }
 }

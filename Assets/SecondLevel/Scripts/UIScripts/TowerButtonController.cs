@@ -6,6 +6,7 @@ public class TowerButtonController : MonoBehaviour
 
     private tower currentArea;
     public tower SetTower(tower tower) => currentArea = tower;
+    public bool clicked = false;
 
     //Event Implements
     private void OnEnable()
@@ -27,6 +28,7 @@ public class TowerButtonController : MonoBehaviour
         if (currentArea != null)
         {
             currentArea.TowerBuilt(_Tower);
+            clicked = true;
         }
     }
 }

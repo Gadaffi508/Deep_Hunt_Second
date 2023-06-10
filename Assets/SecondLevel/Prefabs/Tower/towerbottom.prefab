@@ -368,6 +368,7 @@ MonoBehaviour:
     m_Bits: 128
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
+  upgrade: 0
 --- !u!61 &6598605619439820119
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,20 +14,22 @@ public class CameraMain : MonoBehaviour
     private Vector3 orijinalPozisyon;
     private float titremeSiddeti = 0.1f;
     private float titremeSure = 1f;
-
-
-    public static CameraMain Cam›nstance;
+    public float maxX;
+    public float minX;
 
     public GameObject Fog;
 
+    public static CameraMain main;
+
     private void Awake()
     {
-        if (Cam›nstance != null)
+        if (main != null)
         {
+            main.gameObject.SetActive(false);
             Destroy(this.gameObject);
             return;
         }
-        Cam›nstance = this;
+        main = this;
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
@@ -43,12 +45,16 @@ public class CameraMain : MonoBehaviour
 
     void LateUpdate()
     {
-        if(targetPos != null)
+        if (targetPos != null)
             targetVector = targetPos.position + delayAmount;
 
         Vector3 yumusatilmisPozisyon = Vector3.Lerp(transform.position, targetVector, speed * Time.deltaTime);
 
-        transform.position = new Vector3(yumusatilmisPozisyon.x,transform.position.y,transform.position.z);
+        float clampedX = Mathf.Clamp(yumusatilmisPozisyon.x, minX, maxX);
+
+        yumusatilmisPozisyon = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+        transform.position = yumusatilmisPozisyon;
 
     }
 

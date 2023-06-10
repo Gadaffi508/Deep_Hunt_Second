@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public Text Goldtext;
     public Text HealthText;
 
+    public GameObject boat;
+    public GameObject Cam;
+
     public int Gold;
     public float Health;
 
@@ -23,6 +26,12 @@ public class GameManager : MonoBehaviour
 
     public int damagedecrease = 0;
     public bool built = true;
+    public bool clicka = true;
+    public bool clickb = true;
+    public bool clickc = true;
+    public bool clickd = true;
+
+    LevelManager levelManager;
 
     private void Awake()
     {
@@ -30,6 +39,7 @@ public class GameManager : MonoBehaviour
 
         if (Instance != null)
         {
+            Instance.gameObject.SetActive(false);
             Destroy(this.gameObject);
             return;
         }
@@ -42,13 +52,16 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         HealtbarBG.SetActive(true);
         Healtbar.gameObject.SetActive(true);
-
-
+        if (GameObject.FindGameObjectWithTag("Ship") != null)
+        {
+            boat = GameObject.FindGameObjectWithTag("Ship").gameObject;
+        }
     }
 
     private void FixedUpdate()
     {
         Goldtext.text = Gold.ToString();
+        levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();
     }
 
 
@@ -71,6 +84,38 @@ public class GameManager : MonoBehaviour
     public void nextScene(int scene›D)
     {
         SceneManager.LoadScene(scene›D);
+    }
+    public void GameobjectBoatActive()
+    {
+        HealtbarBG.SetActive(false);
+        Healtbar.gameObject.SetActive(false);
+        boat.SetActive(false);
+        levelManager.levelM += 1;
+        if (Health < 200)
+        {
+            Health += 50;
+            if (Health >= 200)
+            {
+                Health = 200;
+            }
+        }
+        levelManager.LoadMapScene();
+        StartCoroutine(loadCamDelay());
+    }
+    public void GameobjectBoat()
+    {
+        HealtbarBG.SetActive(true);
+        Healtbar.gameObject.SetActive(true);
+        boat.SetActive(true);
+    }
+    public void CamActive()
+    {
+        Cam.SetActive(true);
+    }
+    IEnumerator loadCamDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Cam.SetActive(false);
     }
 
 

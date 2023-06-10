@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   maxHeight: -5.85
-  damage: 12
+  damage: 3
 --- !u!50 &749815284613099194
 Rigidbody2D:
   serializedVersion: 4

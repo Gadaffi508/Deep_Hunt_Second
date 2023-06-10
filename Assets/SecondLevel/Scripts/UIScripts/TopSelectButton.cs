@@ -6,14 +6,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TopSelectButton : MonoBehaviour, IPointerEnterHandler
+public class TopSelectButton : MonoBehaviour
 {
     public BulletScriptable bullet;
     public Image BulletSprite;
 
     //Events
     public event Action<BulletScriptable> OnButtonClick;
-    public event Action<BulletScriptable> OnButtonEnter;
 
     //private variables
     private Button button;
@@ -29,14 +28,6 @@ public class TopSelectButton : MonoBehaviour, IPointerEnterHandler
 
         BulletSprite.sprite = bullet.spt.sprite;
     }
-
-
-    //Mouse on Button
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (OnButtonEnter != null)
-            OnButtonEnter.Invoke(bullet);
-    }
     //Mouse on click
     public void OnClick()
     {
@@ -46,11 +37,6 @@ public class TopSelectButton : MonoBehaviour, IPointerEnterHandler
             {
                 OnButtonClick(bullet);
                 GameManager.Instance.built = true;
-                if (GetComponentInParent<RawImage>().name == "bg")
-                {
-                    GetComponentInParent<GameObject>().gameObject.transform.DOMoveY(1500, 1);
-                }
-
             }
             towerGold.BuyTower();
         }

@@ -88,4 +88,9 @@ public class TutorialSecond : MonoBehaviour
             Destroy(destg[i]);
         }
     }
+
+    public void BoatDestroyed()
+    {
+        Destroy(boat.gameObject);
+    }
 }

@@ -131,7 +131,7 @@ MonoBehaviour:
   OverlapRadius: 7.3
   nearestEnemy: {fileID: 0}
   rotateFire: {fileID: 621758480841080324}
-  Bullet: {fileID: 11400000, guid: 6b060e85be096a646b87a45d30c06779, type: 2}
+  Bullet: {fileID: 11400000, guid: 25f0bfaa5efa7554d9309bf2bd3d03e0, type: 2}
   FirePos: {fileID: 21210941616526318}
   effectPos: {fileID: 7959354336718767629}
   BulletRotate: {fileID: 1697499072240528607}
@@ -370,6 +370,8 @@ MonoBehaviour:
     m_Bits: 128
   gunInfoPanel: {fileID: 0}
   TowerUpgrade: {fileID: 0}
+  upgrade: 0
+  bulletupgrade: 1
 --- !u!61 &6598605619439820119
 BoxCollider2D:
   m_ObjectHideFlags: 0

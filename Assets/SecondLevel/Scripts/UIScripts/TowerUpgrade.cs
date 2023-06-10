@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TowerUpgrade : MonoBehaviour
 {
     public event Action OnButtonClick;
+    TowerS buyT;
 
     private Button button;
 
@@ -15,13 +16,22 @@ public class TowerUpgrade : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
+        buyT = GetComponent<TowerS>();
     }
 
     public void OnClick()
     {
-        if (OnButtonClick != null)
+        if (GameManager.Instance.Gold >= buyT.buyTower)
         {
-            OnButtonClick();
+            if (OnButtonClick != null)
+            {
+                OnButtonClick();
+            }
+        buyT.BuyTower();
+        }
+        else
+        {
+            Debug.Log("No money");
         }
     }
 }

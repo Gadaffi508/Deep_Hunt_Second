@@ -15,9 +15,6 @@ public class KrakenUpSurFace : MonoBehaviour
     private bool KrakenIsLife = true;
     public int aktifSekans = 1;
 
-    public Image Healtbar;
-    public GameObject HealtbarBG;
-
     void Start()
     {
         
@@ -39,10 +36,5 @@ public class KrakenUpSurFace : MonoBehaviour
             animator.SetBool("input", true);
             animator.SetBool("exit", false);
             Kraken.transform.DOMoveY(-19, 1f); 
-    }
-    public void TakeDamage(float damage)
-    {
-        krakenHealth -=damage; // health = health - damage - (damagedecrease)
-        Healtbar.fillAmount = krakenHealth / 200;
     }
 }

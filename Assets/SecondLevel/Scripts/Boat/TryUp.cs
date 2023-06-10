@@ -10,6 +10,7 @@ public class TryUp : BoatTowerController
     [Header("Text")]
     public GameObject gunInfoPanel;
     public GameObject TowerUpgrade;
+    public bool upgrade = false;
 
     private void Start()
     {
@@ -24,10 +25,9 @@ public class TryUp : BoatTowerController
 
     public override void TowerBuilt()
     {
-        if (TowerUpgrade != null)
+        if (TowerUpgrade != null && upgrade == true)
         {
             TowerUpgrade.transform.DOMoveY(500, 1);
-            //TowerUpgrade.GetComponent<TowerTopController>().SetTower(tower);
         }
     }
     public void HealthUpgrade()
