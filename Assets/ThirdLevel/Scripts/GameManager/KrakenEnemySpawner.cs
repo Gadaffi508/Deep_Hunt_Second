@@ -22,17 +22,16 @@ public class KrakenEnemySpawner : MonoBehaviour
     }
     IEnumerator SpawnerTimer()
     {
-        for (int i = 0; i < numberOfWave; i++)
+        for (int i = 0; i < 2; i++)
         {
             int random = Random.Range(0, points.Length);
-            yield return new WaitForSeconds(2f);
-            Instantiate(tankEnemy, points[random].position, Quaternion.identity);
-            for (int c = 0; c < normalEnemyNumber; c++)
+            Instantiate(tankEnemy, points[random].position,Quaternion.identity);
+            yield return new WaitForSeconds(3f);
+            for (int a = 0; a < 2; a++)
             {
                 Instantiate(normalEnemy, points[random].position, Quaternion.identity);
                 yield return new WaitForSeconds(2f);
             }
-            yield return new WaitForSeconds(5f);
         }
     }
    

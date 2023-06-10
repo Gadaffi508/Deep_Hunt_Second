@@ -23,7 +23,7 @@ public class Slap : MonoBehaviour
             animator.SetBool("Exit", true);
             transform.DOMoveY(-5.7f, 2f).OnComplete(() => {
                 animator.SetBool("Exit", false);
-                transform.DOMoveY(-9f, 1).OnComplete(() => {
+                transform.DOMoveY(-25f, 1).OnComplete(() => {
                     Destroy(gameObject);
                 });
             });

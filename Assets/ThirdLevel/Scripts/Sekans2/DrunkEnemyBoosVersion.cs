@@ -10,10 +10,10 @@ public class DrunkEnemyBoosVersion : MonoBehaviour
     void Start()
     {
         m_Animator = GetComponent<Animator>();
-        transform.DOMoveY(transform.position.y - 1f, 2f).OnComplete(() =>
+        transform.DOMoveY(transform.position.y - 3f, 2f).OnComplete(() =>
         {
             m_Animator.SetBool("okey",true);
-            transform.DOMoveY(transform.position.y, 2f).OnComplete(() =>
+            transform.DOMoveY(transform.position.y, 3f).OnComplete(() =>
             {
                 m_Animator.SetTrigger("touched");
                 transform.DOMoveY(transform.position.y - 32f, 3f).OnComplete(() =>

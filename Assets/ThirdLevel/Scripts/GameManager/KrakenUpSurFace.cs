@@ -10,7 +10,7 @@ public class KrakenUpSurFace : MonoBehaviour
     public float krakenHealth;
     public GameObject Kraken;
     public bool above = false;
-    private Animator animator;
+    public Animator animator;
 
     private bool KrakenIsLife = true;
     public int aktifSekans = 1;
@@ -20,7 +20,7 @@ public class KrakenUpSurFace : MonoBehaviour
 
     void Start()
     {
-        animator = GameObject.FindGameObjectWithTag("Kraken").GetComponent<Animator>();  
+        
     }
 
   

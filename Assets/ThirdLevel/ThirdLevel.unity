@@ -1476,13 +1476,14 @@ GameObject:
   - component: {fileID: 1080272420}
   - component: {fileID: 1080272418}
   - component: {fileID: 1080272423}
-  m_Layer: 0
+  - component: {fileID: 1080272424}
+  m_Layer: 8
   m_Name: Kraken
-  m_TagString: Kraken
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1080272415
 Transform:
   m_ObjectHideFlags: 0
@@ -1491,10 +1492,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080272414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -16.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0882, y: -16.1, z: 0}
+  m_LocalScale: {x: 0.9832, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1870292129}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1511,7 +1513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arm: {fileID: 1544609080097762627, guid: b5617e23182acba4d8ac5b7e95ed0261, type: 3}
-  rock: {fileID: 8025333749549533609, guid: 677018c40c70f1442b5ea4f2f5220b98, type: 3}
+  rock: {fileID: 8025333749549533609, guid: c0fc2448cf57abe4d859b1a1d2328da4, type: 3}
   points:
   - {fileID: 1104872868}
   - {fileID: 525043903}
@@ -1640,20 +1642,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd3c71eaff66cb4db87755c8c7117b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elapsedTimeKrakenDown: 19
-  targetTimeKrakenDown: 20
+  elapsedTimeKrakenDown: 0
+  targetTimeKrakenDown: 40
   elapsedTimeKrakenUp: 0
-  targetTimeKrakenUp: 20
-  elapsedTimeEvent3: 20
-  targetTimeEvent3: 0
-  elapsedTimeEvent1: 0
-  targetTimeEvent1: 10
-  elapsedTimeEvent2: 9.5
-  targetTimeEvent2: 10
+  targetTimeKrakenUp: 35
+  elapsedTimeEvent3: 30
+  targetTimeEvent3: 24
+  elapsedTimeEvent1: 20
+  targetTimeEvent1: 12
+  elapsedTimeEvent2: 11
+  targetTimeEvent2: 14
   health: 1300
   threshold: 30
-  elapsedTimeEvent4: 15
-  targetTimeEvent4: 5
+  elapsedTimeEvent4: 25
+  targetTimeEvent4: 15
 --- !u!114 &1080272422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,7 +1688,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.57752967, y: 4.5862656}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1697,8 +1699,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.3442273, y: 5.922329}
+  m_Size: {x: 22.36, y: 23.52}
   m_EdgeRadius: 0
+--- !u!114 &1080272424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080272414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c327dd80d724ae41bb8ab5ad2295f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5000
+  attack: 0
+  puffEffect: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  effectPoint1: {fileID: 1870292129}
+  hasarSure: 5
+  hasarVeriliyor: 0
+  deadSound: {fileID: 8300000, guid: 9f0aa4236ae70cf4b8eb2f173e91a001, type: 3}
 --- !u!1 &1104872867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2476,7 @@ MonoBehaviour:
   krakenHealth: 0
   Kraken: {fileID: 1080272414}
   above: 0
+  animator: {fileID: 1080272418}
   aktifSekans: 1
   Healtbar: {fileID: 1881080422}
   HealtbarBG: {fileID: 679906053}
@@ -2625,6 +2647,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1009271811}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1870292128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870292129}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870292129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870292128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080272415}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881080420
 GameObject:
