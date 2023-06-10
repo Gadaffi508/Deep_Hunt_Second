@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         Goldtext.text = Gold.ToString();
-        levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();
+        //levelManager = GameObject.FindGameObjectWithTag("Level").gameObject.GetComponent<LevelManager>();
     }
 
 
