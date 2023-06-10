@@ -23,10 +23,12 @@ public class Try : BoatTowerController
     {
         gunInfoPanel.transform.DOMoveY(1500, 1);
         TowerUpgrade.transform.DOMoveY(1500, 1);
+        GameManager.Instance.built = true;
     }
 
     public override void TowerBuilt()
     {
+        GameManager.Instance.built = false;
         if (gunInfoPanel != null)
         {
             gunInfoPanel.transform.DOMoveY(900, 1);

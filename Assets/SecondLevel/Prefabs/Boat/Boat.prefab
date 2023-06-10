@@ -316,9 +316,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3563619576150474143}
     m_Modifications:
+    - target: {fileID: 1975965973987969681, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
+      propertyPath: OpenTowerObject.m_Bits
+      value: 16448
+      objectReference: {fileID: 0}
     - target: {fileID: 2130299851727889254, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_Name
-      value: Area (1)
+      value: green
       objectReference: {fileID: 0}
     - target: {fileID: 2130299851727889254, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_Layer
@@ -428,11 +432,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Name
-      value: Area (4)
+      value: red
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295278325232290574, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
+      propertyPath: OpenTowerObject.m_Bits
+      value: 16448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
@@ -494,11 +502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Name
-      value: Area
+      value: red
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295278325232290574, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
+      propertyPath: OpenTowerObject.m_Bits
+      value: 16448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
@@ -564,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3954392928423851274, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: OpenTowerObject.m_Bits
-      value: 16448
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4494636789310089706, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: OpenTowerObject.m_Bits
@@ -572,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Name
-      value: Area (3)
+      value: white
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Layer
@@ -664,9 +676,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3563619576150474143}
     m_Modifications:
+    - target: {fileID: 1975965973987969681, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
+      propertyPath: OpenTowerObject.m_Bits
+      value: 16448
+      objectReference: {fileID: 0}
     - target: {fileID: 2130299851727889254, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_Name
-      value: Area (2)
+      value: green
       objectReference: {fileID: 0}
     - target: {fileID: 2130299851727889254, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_Layer
@@ -780,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3954392928423851274, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: OpenTowerObject.m_Bits
-      value: 16448
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4494636789310089706, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: OpenTowerObject.m_Bits
@@ -788,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Name
-      value: Area
+      value: white
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Layer

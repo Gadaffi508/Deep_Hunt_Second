@@ -18,6 +18,7 @@ public class tower : BoatTowerController
         {
             TowerPanel.transform.DOMoveY(1500, 1);
             TowerPanel.GetComponent<TowerButtonController>().SetTower(null);
+            GameManager.Instance.built = true;
         }
     }
 

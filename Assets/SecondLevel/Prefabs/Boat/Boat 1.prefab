@@ -369,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Name
-      value: Area
+      value: white
       objectReference: {fileID: 0}
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Layer
@@ -504,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Name
-      value: Area 1
+      value: red
       objectReference: {fileID: 0}
     - target: {fileID: 7096989752757636332, guid: eea83c65265fb4d4f8d7d350b56aa362, type: 3}
       propertyPath: m_Layer
@@ -526,7 +526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2130299851727889254, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_Name
-      value: Area 2 (1)
+      value: green
       objectReference: {fileID: 0}
     - target: {fileID: 7586579144537480012, guid: 59746dc801449014fbf6cc55f41991d2, type: 3}
       propertyPath: m_RootOrder
@@ -588,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4601126088691743105, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_Name
-      value: Area (1)
+      value: white
       objectReference: {fileID: 0}
     - target: {fileID: 5405113573087445419, guid: 35465114f45f21343bbc7879a8bc823c, type: 3}
       propertyPath: m_RootOrder

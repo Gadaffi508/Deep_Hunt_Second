@@ -52,7 +52,12 @@ public class CameraTutorial : MonoBehaviour
 
         Vector3 yumusatilmisPozisyon = Vector3.Lerp(transform.position, targetVector, speed * Time.deltaTime);
 
-        transform.position = new Vector3(yumusatilmisPozisyon.x, transform.position.y, transform.position.z);
+        float clampedX = Mathf.Clamp(yumusatilmisPozisyon.x, -9, 8);
+
+        yumusatilmisPozisyon = new Vector3(clampedX, transform.position.y, transform.position.z);
+
+        transform.position = yumusatilmisPozisyon;
+
 
     }
 }

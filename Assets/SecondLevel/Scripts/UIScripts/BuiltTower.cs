@@ -36,6 +36,7 @@ public class BuiltTower : MonoBehaviour
             if (OnButtonClick != null)
             {
                 OnButtonClick(towerP);
+                GameManager.Instance.built = true;
             }
             towerGold.BuyTower();
         }

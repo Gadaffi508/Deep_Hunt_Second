@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/FirstLevel/GameMenu.unity
     guid: 46282133d4401a040b0c8d49269dc07d
   - enabled: 1
+    path: Assets/SecondLevel/Tutorial.unity
+    guid: 20b37deb32132ec4c8682f9b182fed38
+  - enabled: 1
     path: Assets/FirstLevel/MapScene.unity
     guid: b03008211df964f4a81e55e9d0b39453
   - enabled: 1

@@ -163,6 +163,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1c4905376c162624798dd8628d35505a, type: 3}
   - {fileID: 8300000, guid: 0bcbde392a2170341b6f6f9fcf71d89a, type: 3}
   damagedecrease: 0
+  built: 1
 --- !u!4 &175835439
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1053,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1623,6 +1624,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1393521282276384214, guid: 7864c4548c864184abbff671341a9f88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1393521282359115917, guid: 7864c4548c864184abbff671341a9f88, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1886,6 +1891,14 @@ PrefabInstance:
     - target: {fileID: 1393521283801441185, guid: 7864c4548c864184abbff671341a9f88, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892855173744210074, guid: 7864c4548c864184abbff671341a9f88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 253
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892855173744210077, guid: 7864c4548c864184abbff671341a9f88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7864c4548c864184abbff671341a9f88, type: 3}

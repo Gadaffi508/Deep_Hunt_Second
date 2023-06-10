@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 public class KrakenUpSurFace : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class KrakenUpSurFace : MonoBehaviour
 
     private bool KrakenIsLife = true;
     public int aktifSekans = 1;
+
+    public Image Healtbar;
+    public GameObject HealtbarBG;
+
     void Start()
     {
         animator = GameObject.FindGameObjectWithTag("Kraken").GetComponent<Animator>();  
@@ -34,5 +39,10 @@ public class KrakenUpSurFace : MonoBehaviour
             animator.SetBool("input", true);
             animator.SetBool("exit", false);
             Kraken.transform.DOMoveY(-19, 1f); 
+    }
+    public void TakeDamage(float damage)
+    {
+        krakenHealth -=damage; // health = health - damage - (damagedecrease)
+        Healtbar.fillAmount = krakenHealth / 200;
     }
 }

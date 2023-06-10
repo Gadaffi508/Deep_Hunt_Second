@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int damagedecrease = 0;
+    public bool built = true;
 
     private void Awake()
     {
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         Health += healingAmount;
 
-        Healtbar.fillAmount = Health / 100;
+        Healtbar.fillAmount = Health / 200;
     }
 
 
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
         int random = Random.Range(0, DamageSounds.Length);
         audio.PlayOneShot(DamageSounds[random]);
         Health -= Mathf.Abs((damage - damagedecrease)); // health = health - damage - (damagedecrease)
-        Healtbar.fillAmount = Health / 100;
+        Healtbar.fillAmount = Health / 200;
     }
 
     public void nextScene(int scene›D)

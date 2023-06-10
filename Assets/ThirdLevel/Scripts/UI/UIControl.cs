@@ -1,16 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class BoatTowerController : MonoBehaviour
+public class UIControl : MonoBehaviour
 {
+    public GameObject ýmagefill;
+    public GameObject ýmagebg;
     public LayerMask OpenTowerObject;
 
-    public abstract void TowerBuilt();
-    public abstract void CloseTower();
+    private void Awake()
+    {
+        GameManager.Instance.built = true;
+    }
 
     private void Update()
     {
@@ -23,14 +25,19 @@ public abstract class BoatTowerController : MonoBehaviour
 
             if (hit.collider != null)
             {
-                CloseTower();
-                hit.collider.GetComponent<BoatTowerController>().TowerBuilt();
+                GameManager.Instance.built = false;
             }
         }
-        if (Input.GetMouseButtonDown(1))
+
+        if (GameManager.Instance.built == true)
         {
-            CloseTower();
+            ýmagefill.SetActive(true);
+            ýmagebg.SetActive(true);
+        }
+        else
+        {
+            ýmagefill.SetActive(false);
+            ýmagebg.SetActive(false);
         }
     }
 }
-

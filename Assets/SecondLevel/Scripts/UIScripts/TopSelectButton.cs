@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,9 +17,12 @@ public class TopSelectButton : MonoBehaviour, IPointerEnterHandler
 
     //private variables
     private Button button;
+    TowerS towerGold;
 
     private void Start()
     {
+        towerGold = GetComponent<TowerS>();
+
         button = GetComponent<Button>();
 
         button.onClick.AddListener(OnClick);
@@ -36,7 +40,23 @@ public class TopSelectButton : MonoBehaviour, IPointerEnterHandler
     //Mouse on click
     public void OnClick()
     {
-        if (OnButtonClick != null)
-            OnButtonClick(bullet);
+        if (GameManager.Instance.Gold >= towerGold.buyTower)
+        {
+            if (OnButtonClick != null)
+            {
+                OnButtonClick(bullet);
+                GameManager.Instance.built = true;
+                if (GetComponentInParent<RawImage>().name == "bg")
+                {
+                    GetComponentInParent<GameObject>().gameObject.transform.DOMoveY(1500, 1);
+                }
+
+            }
+            towerGold.BuyTower();
+        }
+        else
+        {
+            Debug.Log("No money");
+        }
     }
 }
