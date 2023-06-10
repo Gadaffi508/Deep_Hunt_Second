@@ -23,8 +23,8 @@ public class StoneFall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Stone"))
         {
-            warningPos = new Vector2(target.position.x, 3.5f);
-            warningPos2 = new Vector2(target.position.x, 5.5f);
+            warningPos = new Vector2(target.position.x,8.5f);
+            warningPos2 = new Vector2(target.position.x, 9f);
             StartCoroutine(Timer());
         }
     }

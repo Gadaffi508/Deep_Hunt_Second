@@ -9,7 +9,7 @@ public class Slap : MonoBehaviour
     private Transform ship;
     private Animator animator;
 
-   
+    public float attack;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +34,7 @@ public class Slap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            //Hasar Kodlarý
+            GameManager.Instance.TakeDamage(attack);
         }
     }
 

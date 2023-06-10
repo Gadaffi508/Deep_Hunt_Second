@@ -5,6 +5,8 @@ using DG.Tweening;
 public class DrunkEnemyBoosVersion : MonoBehaviour
 {
     private Animator m_Animator;
+
+    public float attack;
     void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -14,7 +16,7 @@ public class DrunkEnemyBoosVersion : MonoBehaviour
             transform.DOMoveY(transform.position.y, 2f).OnComplete(() =>
             {
                 m_Animator.SetTrigger("touched");
-                transform.DOMoveY(transform.position.y - 12, 3f).OnComplete(() =>
+                transform.DOMoveY(transform.position.y - 32f, 3f).OnComplete(() =>
                 {
                     Destroy(gameObject);
                 });
@@ -32,7 +34,7 @@ public class DrunkEnemyBoosVersion : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ship"))
         {
-            Destroy(gameObject);
+            GameManager.Instance.TakeDamage(attack);
         }
     }
 }

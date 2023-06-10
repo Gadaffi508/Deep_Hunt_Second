@@ -15,7 +15,7 @@ public class KrakenUpSurFace : MonoBehaviour
     public int aktifSekans = 1;
     void Start()
     {
-        animator = GameObject.FindGameObjectWithTag("Kraken").GetComponent<Animator>();
+        animator = GameObject.FindGameObjectWithTag("Kraken").GetComponent<Animator>();  
     }
 
   
